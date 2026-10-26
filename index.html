@@ -106,7 +106,7 @@
         <a class="nav-link" href="#skills">Curriculum</a>
         <a class="nav-link" href="#credentials">Credentials</a>
         <a class="nav-link" href="#estimator">Estimator</a>
-        <a class="nav-link" href="#lookbook">LOOKBOOK</a>
+        <a class="nav-link" href="#lookbook">Lookbook</a>
         <a class="nav-link" href="#engagements">Models</a>
         <a class="nav-link" href="#faq">FAQ</a>
       </nav>
@@ -149,10 +149,22 @@
     <a class="mobile-nav-link" href="#skills">Curriculum &amp; Labs <span>→</span></a>
     <a class="mobile-nav-link" href="#credentials">Credentials <span>→</span></a>
     <a class="mobile-nav-link" href="#estimator">Workshop Estimator <span>→</span></a>
-    <a class="mobile-nav-link" href="#lookbook">LOOKBOOK <span>→</span></a>
+    <a class="mobile-nav-link" href="#lookbook">Lookbook <span>→</span></a>
     <a class="mobile-nav-link" href="#engagements">Engagement Models <span>→</span></a>
     <a class="mobile-nav-link" href="#faq">FAQ <span>→</span></a>
-    <a class="btn btn-primary btn-block mt-3" href="#contact">Schedule Workshop Now</a>
+    <div class="mobile-drawer-actions">
+      <button class="mobile-audio-toggle-btn" id="mobile-audio-toggle" type="button" aria-label="Toggle cyber audio effects">
+        <span class="mobile-audio-label">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          Cyber Sound Effects
+        </span>
+        <span class="mobile-audio-status" id="mobile-audio-status">OFF</span>
+      </button>
+      <a class="btn btn-primary btn-block" href="#contact">Schedule Workshop Now</a>
+    </div>
   </div>
 
   <main id="main">
@@ -298,19 +310,16 @@
             </div>
             <div class="terminal-title">
               <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m10 10-2 2 2 2"/></svg>
-              <span>root@jeevan-sec: ~ (bash / zsh)</span>
+              <span>root@jeevan-sec:~#</span>
             </div>
-            <div style="font-size: 0.72rem; color: #34d399; font-family: var(--font-mono);">
+            <div class="terminal-live-badge">
               ● LIVE
             </div>
           </div>
 
-          <div class="terminal-body" id="terminal-body">
-            <div class="terminal-intro">
-              Type <strong style="color: #38bdf8;">help</strong> for commands, or click any quick shortcut:
-            </div>
-
-            <!-- Quick Action Chips -->
+          <!-- Quick Action Chips Toolbar (Always visible & accessible) -->
+          <div class="terminal-toolbar">
+            <span class="toolbar-hint">QUICK SHORTCUTS:</span>
             <div class="terminal-chips">
               <button class="term-chip" type="button" data-cmd="whoami">whoami</button>
               <button class="term-chip" type="button" data-cmd="skills">skills</button>
@@ -321,6 +330,9 @@
               <button class="term-chip" type="button" data-cmd="contact">contact</button>
               <button class="term-chip" type="button" data-cmd="clear">clear</button>
             </div>
+          </div>
+
+          <div class="terminal-body" id="terminal-body">
 
             <!-- Output Entries Container -->
             <div class="terminal-output" id="terminal-output">
@@ -787,7 +799,7 @@
     <section class="section" id="lookbook" aria-labelledby="lookbook-heading">
       <div class="container">
         <header class="section-head">
-          <span class="section-kicker">05 · ON-CAMPUS LOOKBOOK</span>
+          <span class="section-kicker">05 · On-Campus Lookbook</span>
           <h2 class="section-title" id="lookbook-heading">
             Workshops &amp; Labs <span class="gradient-text">Lookbook</span>
           </h2>

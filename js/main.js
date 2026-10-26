@@ -76,16 +76,34 @@
     }
   }
 
+  function toggleAudio() {
+    initAudio();
+    state.audioEnabled = !state.audioEnabled;
+    const audioToggle = document.getElementById('audio-toggle');
+    const mobileAudioToggle = document.getElementById('mobile-audio-toggle');
+    const mobileAudioStatus = document.getElementById('mobile-audio-status');
+
+    if (audioToggle) {
+      audioToggle.classList.toggle('active', state.audioEnabled);
+    }
+    if (mobileAudioToggle) {
+      mobileAudioToggle.classList.toggle('active', state.audioEnabled);
+    }
+    if (mobileAudioStatus) {
+      mobileAudioStatus.textContent = state.audioEnabled ? 'ON' : 'OFF';
+    }
+    if (state.audioEnabled) {
+      playCyberSound('open');
+    }
+  }
+
   const audioToggle = document.getElementById('audio-toggle');
   if (audioToggle) {
-    audioToggle.addEventListener('click', () => {
-      initAudio();
-      state.audioEnabled = !state.audioEnabled;
-      audioToggle.classList.toggle('active', state.audioEnabled);
-      if (state.audioEnabled) {
-        playCyberSound('open');
-      }
-    });
+    audioToggle.addEventListener('click', toggleAudio);
+  }
+  const mobileAudioToggle = document.getElementById('mobile-audio-toggle');
+  if (mobileAudioToggle) {
+    mobileAudioToggle.addEventListener('click', toggleAudio);
   }
 
   /* ==========================================================================
@@ -121,10 +139,10 @@
       // Outer Wireframe Icosahedron
       const geomIco = new THREE.IcosahedronGeometry(15, 2);
       const matWire = new THREE.MeshBasicMaterial({
-        color: 0x00f2fe,
+        color: 0x334155,
         wireframe: true,
         transparent: true,
-        opacity: 0.22
+        opacity: 0.18
       });
       const wireSphere = new THREE.Mesh(geomIco, matWire);
       cyberGroup.add(wireSphere);
@@ -132,10 +150,10 @@
       // Inner Rotating Cyber Octahedron Core
       const geomCore = new THREE.OctahedronGeometry(8, 1);
       const matCore = new THREE.MeshBasicMaterial({
-        color: 0x818cf8,
+        color: 0x475569,
         wireframe: true,
         transparent: true,
-        opacity: 0.35
+        opacity: 0.22
       });
       const coreMesh = new THREE.Mesh(geomCore, matCore);
       cyberGroup.add(coreMesh);
@@ -143,10 +161,10 @@
       // Outer Orbital Ring
       const geomRing = new THREE.RingGeometry(21, 21.4, 64);
       const matRing = new THREE.MeshBasicMaterial({
-        color: 0x10b981,
+        color: 0x0f172a,
         side: THREE.DoubleSide,
         transparent: true,
-        opacity: 0.25
+        opacity: 0.15
       });
       const ringMesh = new THREE.Mesh(geomRing, matRing);
       ringMesh.rotation.x = Math.PI / 2.5;
@@ -158,8 +176,8 @@
       const positions = new Float32Array(particleCount * 3);
       const colors = new Float32Array(particleCount * 3);
 
-      const color1 = new THREE.Color(0x00f2fe);
-      const color2 = new THREE.Color(0x818cf8);
+      const color1 = new THREE.Color(0x334155);
+      const color2 = new THREE.Color(0x64748b);
       const color3 = new THREE.Color(0x10b981);
 
       for (let i = 0; i < particleCount; i++) {
@@ -286,8 +304,8 @@
 
     function draw() {
       ctx.clearRect(0, 0, width, height);
-      ctx.fillStyle = '#00f2fe';
-      ctx.strokeStyle = 'rgba(0, 242, 254, 0.12)';
+      ctx.fillStyle = '#334155';
+      ctx.strokeStyle = 'rgba(51, 65, 85, 0.12)';
 
       for (let i = 0; i < dots.length; i++) {
         const d = dots[i];
@@ -520,13 +538,12 @@ Languages:     English (Prof), Hindi (Prof), Kannada (Native)`,
 
       workshops: () => `
 [DELIVERED WORKSHOPS SUMMARY]
-• Mysore, Karnataka     - Ethical Hacking & VAPT Hands-On Lab (60 students)
-• Bengaluru, Karnataka  - VAPT Keynote & Live Attack Demonstrations (120 attendees)
-• Dharwad, Karnataka    - Kali Linux & Network Penetration Testing (75 students)
-• Pune, Maharashtra     - Cloud Security & AWS Hardening Seminar (90 students)
-• Hubballi, Karnataka   - SOC Operations & Splunk Threat Hunting (65 attendees)
-• Hyderabad, Telangana  - AI & Machine Learning Awareness in Cyber (85 students)
-Total: 9+ Workshops delivered across academic & vendor cohorts.`,
+• Hubballi, Karnataka       - Hands-On VAPT & Threat Defense Labs (11 Cohorts)
+• Gadag-Betageri, Karnataka - Python Security Automation & Applied AI (5 Cohorts)
+• Gangawati, Karnataka      - Applied AI & Computer Vision Keynotes (2 Cohorts)
+• Mysore, Karnataka         - Full-Cohort Keynotes & Ethical Hacking Drills (4 Cohorts)
+• Dharwad, Karnataka        - BCA Technical Foundations & Network Security Drills
+Total: Real photographic workshop documentation across Karnataka engineering cohorts.`,
 
       certs: () => `
 [VERIFIED CERTIFICATIONS & HONORS]
@@ -621,7 +638,9 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
         const cmd = chip.dataset.cmd;
         if (cmd) {
           executeCommand(cmd);
-          input.focus();
+          if (window.innerWidth > 768) {
+            input.focus();
+          }
         }
       });
     });
