@@ -1,0 +1,1042 @@
+/**
+ * JEEVAN BAGADE — NEXT-GEN CYBERSECURITY PORTFOLIO
+ * Core Interactive & 3D WebGL Engine
+ */
+
+(function () {
+  'use strict';
+
+  // State Management
+  const state = {
+    audioEnabled: false,
+    audioCtx: null,
+    currentGalleryIndex: 0,
+    galleryItems: [],
+    estimator: {
+      duration: '2-day',
+      track: 'ethical-vapt',
+      cohort: 'medium',
+      location: 'state'
+    }
+  };
+
+  /* ==========================================================================
+     1. WEB AUDIO API SYNTHESIZER (SUBTLE CYBER SOUND FX)
+     ========================================================================== */
+  function initAudio() {
+    if (!state.audioCtx) {
+      const AudioContext = window.AudioContext || window.webkitAudioContext;
+      if (AudioContext) {
+        state.audioCtx = new AudioContext();
+      }
+    }
+    if (state.audioCtx && state.audioCtx.state === 'suspended') {
+      state.audioCtx.resume();
+    }
+  }
+
+  function playCyberSound(type) {
+    if (!state.audioEnabled || !state.audioCtx) return;
+
+    try {
+      const now = state.audioCtx.currentTime;
+      const osc = state.audioCtx.createOscillator();
+      const gain = state.audioCtx.createGain();
+
+      osc.connect(gain);
+      gain.connect(state.audioCtx.destination);
+
+      if (type === 'click') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(800, now);
+        osc.frequency.exponentialRampToValueAtTime(300, now + 0.05);
+        gain.gain.setValueAtTime(0.06, now);
+        gain.gain.linearRampToValueAtTime(0.001, now + 0.05);
+        osc.start(now);
+        osc.stop(now + 0.05);
+      } else if (type === 'cmd') {
+        osc.type = 'triangle';
+        osc.frequency.setValueAtTime(450, now);
+        osc.frequency.exponentialRampToValueAtTime(900, now + 0.08);
+        gain.gain.setValueAtTime(0.08, now);
+        gain.gain.linearRampToValueAtTime(0.001, now + 0.08);
+        osc.start(now);
+        osc.stop(now + 0.08);
+      } else if (type === 'open') {
+        osc.type = 'sine';
+        osc.frequency.setValueAtTime(220, now);
+        osc.frequency.exponentialRampToValueAtTime(660, now + 0.15);
+        gain.gain.setValueAtTime(0.07, now);
+        gain.gain.linearRampToValueAtTime(0.001, now + 0.15);
+        osc.start(now);
+        osc.stop(now + 0.15);
+      }
+    } catch (e) {
+      // Audio error silenced
+    }
+  }
+
+  const audioToggle = document.getElementById('audio-toggle');
+  if (audioToggle) {
+    audioToggle.addEventListener('click', () => {
+      initAudio();
+      state.audioEnabled = !state.audioEnabled;
+      audioToggle.classList.toggle('active', state.audioEnabled);
+      if (state.audioEnabled) {
+        playCyberSound('open');
+      }
+    });
+  }
+
+  /* ==========================================================================
+     2. THREE.JS 3D INTERACTIVE WEBGL BACKGROUND
+     ========================================================================== */
+  function initWebGLBackground() {
+    const canvas = document.getElementById('webgl-canvas');
+    if (!canvas) return;
+
+    // Check if Three is loaded
+    if (typeof THREE === 'undefined') {
+      initCanvasFallback(canvas);
+      return;
+    }
+
+    try {
+      const scene = new THREE.Scene();
+      const camera = new THREE.PerspectiveCamera(60, window.innerWidth / window.innerHeight, 0.1, 1000);
+      camera.position.z = 40;
+
+      const renderer = new THREE.WebGLRenderer({
+        canvas: canvas,
+        alpha: true,
+        antialias: true
+      });
+      renderer.setSize(window.innerWidth, window.innerHeight);
+      renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+      // 3D Cyber Sphere Group
+      const cyberGroup = new THREE.Group();
+      scene.add(cyberGroup);
+
+      // Outer Wireframe Icosahedron
+      const geomIco = new THREE.IcosahedronGeometry(15, 2);
+      const matWire = new THREE.MeshBasicMaterial({
+        color: 0x00f2fe,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.22
+      });
+      const wireSphere = new THREE.Mesh(geomIco, matWire);
+      cyberGroup.add(wireSphere);
+
+      // Inner Rotating Cyber Octahedron Core
+      const geomCore = new THREE.OctahedronGeometry(8, 1);
+      const matCore = new THREE.MeshBasicMaterial({
+        color: 0x818cf8,
+        wireframe: true,
+        transparent: true,
+        opacity: 0.35
+      });
+      const coreMesh = new THREE.Mesh(geomCore, matCore);
+      cyberGroup.add(coreMesh);
+
+      // Outer Orbital Ring
+      const geomRing = new THREE.RingGeometry(21, 21.4, 64);
+      const matRing = new THREE.MeshBasicMaterial({
+        color: 0x10b981,
+        side: THREE.DoubleSide,
+        transparent: true,
+        opacity: 0.25
+      });
+      const ringMesh = new THREE.Mesh(geomRing, matRing);
+      ringMesh.rotation.x = Math.PI / 2.5;
+      cyberGroup.add(ringMesh);
+
+      // Floating Cyber Starfield / Particles
+      const particleCount = 750;
+      const particleGeom = new THREE.BufferGeometry();
+      const positions = new Float32Array(particleCount * 3);
+      const colors = new Float32Array(particleCount * 3);
+
+      const color1 = new THREE.Color(0x00f2fe);
+      const color2 = new THREE.Color(0x818cf8);
+      const color3 = new THREE.Color(0x10b981);
+
+      for (let i = 0; i < particleCount; i++) {
+        const i3 = i * 3;
+        positions[i3] = (Math.random() - 0.5) * 120;
+        positions[i3 + 1] = (Math.random() - 0.5) * 100;
+        positions[i3 + 2] = (Math.random() - 0.5) * 80;
+
+        const mixedColor = i % 3 === 0 ? color1 : i % 3 === 1 ? color2 : color3;
+        colors[i3] = mixedColor.r;
+        colors[i3 + 1] = mixedColor.g;
+        colors[i3 + 2] = mixedColor.b;
+      }
+
+      particleGeom.setAttribute('position', new THREE.BufferAttribute(positions, 3));
+      particleGeom.setAttribute('color', new THREE.BufferAttribute(colors, 3));
+
+      const particleMat = new THREE.PointsMaterial({
+        size: 0.85,
+        vertexColors: true,
+        transparent: true,
+        opacity: 0.65
+      });
+
+      const particles = new THREE.Points(particleGeom, particleMat);
+      scene.add(particles);
+
+      // Position group slightly to the right for balance with hero text
+      cyberGroup.position.set(16, 2, -10);
+
+      // Mouse Parallax
+      let mouseX = 0;
+      let mouseY = 0;
+      let targetX = 0;
+      let targetY = 0;
+
+      window.addEventListener('mousemove', (e) => {
+        mouseX = (e.clientX / window.innerWidth) * 2 - 1;
+        mouseY = -(e.clientY / window.innerHeight) * 2 + 1;
+      });
+
+      // Scroll Tracking
+      let scrollYOffset = 0;
+      window.addEventListener('scroll', () => {
+        scrollYOffset = window.scrollY * 0.02;
+      }, { passive: true });
+
+      // Animation Loop
+      let clock = new THREE.Clock();
+      function animate() {
+        requestAnimationFrame(animate);
+
+        const elapsedTime = clock.getElapsedTime();
+
+        // Target interpolation (Lerp)
+        targetX += (mouseX * 5 - targetX) * 0.05;
+        targetY += (mouseY * 5 - targetY) * 0.05;
+
+        // Group Rotations
+        cyberGroup.rotation.y = elapsedTime * 0.15 + targetX * 0.2 + scrollYOffset * 0.1;
+        cyberGroup.rotation.x = elapsedTime * 0.08 + targetY * 0.15;
+        cyberGroup.rotation.z = Math.sin(elapsedTime * 0.1) * 0.1;
+
+        // Core Pulsing
+        coreMesh.rotation.y = -elapsedTime * 0.25;
+        coreMesh.rotation.x = elapsedTime * 0.18;
+        const scale = 1 + Math.sin(elapsedTime * 1.5) * 0.08;
+        coreMesh.scale.set(scale, scale, scale);
+
+        // Ring Orbit
+        ringMesh.rotation.z = elapsedTime * 0.12;
+
+        // Starfield drift
+        particles.rotation.y = elapsedTime * 0.02;
+        particles.position.y = -scrollYOffset * 0.5;
+
+        renderer.render(scene, camera);
+      }
+      animate();
+
+      // Responsive Resize
+      window.addEventListener('resize', () => {
+        camera.aspect = window.innerWidth / window.innerHeight;
+        camera.updateProjectionMatrix();
+        renderer.setSize(window.innerWidth, window.innerHeight);
+        renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
+
+        if (window.innerWidth < 1024) {
+          cyberGroup.position.set(0, 0, -15);
+        } else {
+          cyberGroup.position.set(16, 2, -10);
+        }
+      });
+
+      // Initial check for screen width
+      if (window.innerWidth < 1024) {
+        cyberGroup.position.set(0, 0, -15);
+      }
+
+    } catch (err) {
+      console.warn('WebGL init fallback triggered:', err);
+      initCanvasFallback(canvas);
+    }
+  }
+
+  // 2D Canvas Fallback in case WebGL is unavailable
+  function initCanvasFallback(canvas) {
+    const ctx = canvas.getContext('2d');
+    if (!ctx) return;
+
+    let width = (canvas.width = window.innerWidth);
+    let height = (canvas.height = window.innerHeight);
+
+    const dots = [];
+    for (let i = 0; i < 60; i++) {
+      dots.push({
+        x: Math.random() * width,
+        y: Math.random() * height,
+        vx: (Math.random() - 0.5) * 0.6,
+        vy: (Math.random() - 0.5) * 0.6,
+        r: Math.random() * 2 + 1
+      });
+    }
+
+    function draw() {
+      ctx.clearRect(0, 0, width, height);
+      ctx.fillStyle = '#00f2fe';
+      ctx.strokeStyle = 'rgba(0, 242, 254, 0.12)';
+
+      for (let i = 0; i < dots.length; i++) {
+        const d = dots[i];
+        d.x += d.vx;
+        d.y += d.vy;
+        if (d.x < 0 || d.x > width) d.vx *= -1;
+        if (d.y < 0 || d.y > height) d.vy *= -1;
+
+        ctx.beginPath();
+        ctx.arc(d.x, d.y, d.r, 0, Math.PI * 2);
+        ctx.fill();
+
+        for (let j = i + 1; j < dots.length; j++) {
+          const d2 = dots[j];
+          const dist = Math.hypot(d.x - d2.x, d.y - d2.y);
+          if (dist < 120) {
+            ctx.beginPath();
+            ctx.moveTo(d.x, d.y);
+            ctx.lineTo(d2.x, d2.y);
+            ctx.stroke();
+          }
+        }
+      }
+      requestAnimationFrame(draw);
+    }
+    draw();
+
+    window.addEventListener('resize', () => {
+      width = canvas.width = window.innerWidth;
+      height = canvas.height = window.innerHeight;
+    });
+  }
+
+  /* ==========================================================================
+     3. MOUSE GLOW FOLLOWER
+     ========================================================================== */
+  const mouseGlow = document.getElementById('mouse-glow');
+  if (mouseGlow) {
+    let mouseX = window.innerWidth / 2;
+    let mouseY = window.innerHeight / 2;
+    let glowX = mouseX;
+    let glowY = mouseY;
+
+    window.addEventListener('mousemove', (e) => {
+      mouseX = e.clientX;
+      mouseY = e.clientY;
+    });
+
+    function updateGlow() {
+      glowX += (mouseX - glowX) * 0.12;
+      glowY += (mouseY - glowY) * 0.12;
+      mouseGlow.style.transform = `translate3d(${glowX}px, ${glowY}px, 0) translate(-50%, -50%)`;
+      requestAnimationFrame(updateGlow);
+    }
+    updateGlow();
+  }
+
+  /* ==========================================================================
+     4. 3D CARD TILT & SPECULAR GLARE ENGINE
+     ========================================================================== */
+  function init3DTiltCards() {
+    const cards = document.querySelectorAll('.glass-card-interactive');
+
+    cards.forEach((card) => {
+      card.addEventListener('mousemove', (e) => {
+        const rect = card.getBoundingClientRect();
+        const x = e.clientX - rect.left;
+        const y = e.clientY - rect.top;
+
+        const centerX = rect.width / 2;
+        const centerY = rect.height / 2;
+
+        const rotateX = ((y - centerY) / centerY) * -8;
+        const rotateY = ((x - centerX) / centerX) * 8;
+
+        card.style.transform = `perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg) scale3d(1.02, 1.02, 1.02)`;
+
+        const percentX = (x / rect.width) * 100;
+        const percentY = (y / rect.height) * 100;
+        card.style.setProperty('--mouse-x', `${percentX}%`);
+        card.style.setProperty('--mouse-y', `${percentY}%`);
+      });
+
+      card.addEventListener('mouseleave', () => {
+        card.style.transform = 'perspective(1000px) rotateX(0deg) rotateY(0deg) scale3d(1, 1, 1)';
+      });
+    });
+  }
+
+  /* ==========================================================================
+     5. SCROLL-DRIVEN PROGRESS, HEADER & SPY
+     ========================================================================== */
+  const scrollProgress = document.getElementById('scroll-progress');
+  const header = document.getElementById('header');
+  const navLinks = document.querySelectorAll('.nav-link');
+  const sections = document.querySelectorAll('section[id]');
+
+  window.addEventListener('scroll', () => {
+    const winScroll = document.documentElement.scrollTop || document.body.scrollTop;
+    const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+    const scrolled = (winScroll / height) * 100;
+
+    if (scrollProgress) {
+      scrollProgress.style.width = scrolled + '%';
+    }
+
+    if (header) {
+      if (winScroll > 30) {
+        header.classList.add('scrolled');
+      } else {
+        header.classList.remove('scrolled');
+      }
+    }
+  }, { passive: true });
+
+  // ScrollSpy Active Link Tracking
+  const observerOptions = {
+    root: null,
+    rootMargin: '-20% 0px -60% 0px',
+    threshold: 0
+  };
+
+  const spyObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        const id = entry.target.getAttribute('id');
+        navLinks.forEach((link) => {
+          if (link.getAttribute('href') === `#${id}`) {
+            link.classList.add('active');
+          } else {
+            link.classList.remove('active');
+          }
+        });
+      }
+    });
+  }, observerOptions);
+
+  sections.forEach((sec) => spyObserver.observe(sec));
+
+  /* ==========================================================================
+     6. SCROLL REVEALS & STAT NUMERIC COUNTERS
+     ========================================================================== */
+  const revealElements = document.querySelectorAll('.reveal-on-scroll');
+
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach((entry) => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('is-revealed');
+        // If it contains counters, trigger them
+        const counters = entry.target.querySelectorAll('[data-counter]');
+        counters.forEach(animateCounter);
+      }
+    });
+  }, { threshold: 0.1 });
+
+  revealElements.forEach((el) => revealObserver.observe(el));
+
+  function animateCounter(counterEl) {
+    if (counterEl.dataset.animated) return;
+    counterEl.dataset.animated = 'true';
+
+    const target = parseInt(counterEl.dataset.counter, 10);
+    const suffix = counterEl.dataset.suffix || '';
+    const duration = 1800;
+    const start = 0;
+    const startTime = performance.now();
+
+    function update(time) {
+      const elapsed = time - startTime;
+      const progress = Math.min(elapsed / duration, 1);
+      // Ease out expo
+      const current = Math.floor(progress === 1 ? target : target * (1 - Math.pow(2, -10 * progress)));
+      counterEl.textContent = current + suffix;
+
+      if (progress < 1) {
+        requestAnimationFrame(update);
+      } else {
+        counterEl.textContent = target + suffix;
+      }
+    }
+    requestAnimationFrame(update);
+  }
+
+  /* ==========================================================================
+     7. INTERACTIVE CYBER TERMINAL EMULATOR
+     ========================================================================== */
+  function initCyberTerminal() {
+    const input = document.getElementById('terminal-input');
+    const output = document.getElementById('terminal-output');
+    const termBody = document.getElementById('terminal-body');
+    const chips = document.querySelectorAll('.term-chip');
+    if (!input || !output) return;
+
+    const commandHistory = [];
+    let historyIndex = -1;
+
+    const commands = {
+      help: () => `
+Available system commands:
+  • whoami     - Display trainer identification & verified credentials
+  • skills     - Show all offensive & defensive cybersecurity modules
+  • workshops  - Review completed university & corporate workshops
+  • certs      - List verified industry & government certifications
+  • tools      - Hands-on security software & lab setups taught
+  • quote      - Review indicative commercial rates and travel terms
+  • contact    - Display email, phone/WhatsApp, and direct links
+  • clear      - Clear terminal screen buffer
+  • help       - List available commands`,
+
+      whoami: () => `
+[IDENTIFICATION]
+Trainer:       Jeevan Bagade
+Specialty:     Cybersecurity & VAPT Trainer · Cloud & AI Security
+Academic:      MCA (MIT World Peace University, Pune)
+               BCA (JSS SMI College, Dharwad)
+Experience:    3+ Years | 9+ Workshops Delivered Pan-India
+Base:          Mysore, Karnataka, India
+Languages:     English (Prof), Hindi (Prof), Kannada (Native)`,
+
+      skills: () => `
+[CURRICULUM MATRIX]
+1. VAPT & Offensive:
+   - Ethical Hacking, Web App Pentest, OWASP Top 10, Network Exploits
+2. Security Tools Lab:
+   - Kali Linux, Burp Suite Pro, Metasploit, Nmap, Wireshark, Splunk
+3. Cloud & AI Security:
+   - AWS CloudTrail, Azure Defender, IAM Hardening, LLM Security Models
+4. Automation & DevOps:
+   - Python Exploits, Scapy Packet Crafting, Dockerized Sandbox Labs`,
+
+      workshops: () => `
+[DELIVERED WORKSHOPS SUMMARY]
+• Mysore, Karnataka     - Ethical Hacking & VAPT Hands-On Lab (60 students)
+• Bengaluru, Karnataka  - VAPT Keynote & Live Attack Demonstrations (120 attendees)
+• Dharwad, Karnataka    - Kali Linux & Network Penetration Testing (75 students)
+• Pune, Maharashtra     - Cloud Security & AWS Hardening Seminar (90 students)
+• Hubballi, Karnataka   - SOC Operations & Splunk Threat Hunting (65 attendees)
+• Hyderabad, Telangana  - AI & Machine Learning Awareness in Cyber (85 students)
+Total: 9+ Workshops delivered across academic & vendor cohorts.`,
+
+      certs: () => `
+[VERIFIED CERTIFICATIONS & HONORS]
+1. Certified Trainer - Cybersecurity, VAPT & Applied Technology
+2. Applied AI & Machine Learning Specialization
+3. Programming Fundamentals (Python) - Infosys Springboard
+4. IT for Business Success - HP LIFE
+5. Agile Project Management & Leadership - Certified`,
+
+      tools: () => `
+[PRACTICAL LAB TOOLCHAIN]
+Kali Linux 2026.x | Burp Suite Professional | Nmap | Wireshark
+Metasploit Framework | Splunk SIEM | OWASP ZAP | Nessus / OpenVAS
+Python 3 / Scapy | Docker Containers | Oracle VirtualBox / VMware`,
+
+      quote: () => `
+[COMMERCIAL GUIDELINES]
+• Trainer fees: Negotiable daily / hourly rates based on duration & syllabus
+• On-site travel outside Mysore: Travel + accommodation + food as agreed
+• Payment milestones: 50% advance to block dates, 50% on completion
+Type 'contact' or visit the #estimator section to build a tailored proposal!`,
+
+      contact: () => `
+[DIRECT CONTACT CHANNELS]
+Email:         jeevndeepbagade@gmail.com
+WhatsApp/Tel:  +91 6361536991
+LinkedIn:      https://www.linkedin.com/in/jeevan-bagade
+Location:      Mysore, Karnataka, India · Available Pan-India`
+    };
+
+    function executeCommand(rawCmd) {
+      const cmd = rawCmd.trim().toLowerCase();
+      playCyberSound('cmd');
+
+      if (cmd === '') return;
+
+      commandHistory.push(cmd);
+      historyIndex = commandHistory.length;
+
+      if (cmd === 'clear') {
+        output.innerHTML = '';
+        return;
+      }
+
+      const entry = document.createElement('div');
+      entry.className = 'terminal-entry';
+
+      const cmdEcho = document.createElement('div');
+      cmdEcho.className = 'terminal-cmd-echo';
+      cmdEcho.innerHTML = `<span class="terminal-prompt-user">jeevan@kali</span>:<span class="terminal-prompt-path">~#</span> <span>${escapeHTML(rawCmd)}</span>`;
+
+      const resp = document.createElement('div');
+      resp.className = 'terminal-response';
+
+      if (commands[cmd]) {
+        resp.textContent = commands[cmd]();
+      } else {
+        resp.innerHTML = `<span style="color: #ef4444;">bash: ${escapeHTML(cmd)}: command not found.</span> Type <strong style="color: var(--cyber-cyan);">help</strong> for valid commands.`;
+      }
+
+      entry.appendChild(cmdEcho);
+      entry.appendChild(resp);
+      output.appendChild(entry);
+
+      if (termBody) {
+        termBody.scrollTop = termBody.scrollHeight;
+      }
+    }
+
+    input.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter') {
+        executeCommand(input.value);
+        input.value = '';
+      } else if (e.key === 'ArrowUp') {
+        if (historyIndex > 0) {
+          historyIndex--;
+          input.value = commandHistory[historyIndex];
+        }
+      } else if (e.key === 'ArrowDown') {
+        if (historyIndex < commandHistory.length - 1) {
+          historyIndex++;
+          input.value = commandHistory[historyIndex];
+        } else {
+          historyIndex = commandHistory.length;
+          input.value = '';
+        }
+      }
+    });
+
+    chips.forEach((chip) => {
+      chip.addEventListener('click', () => {
+        const cmd = chip.dataset.cmd;
+        if (cmd) {
+          executeCommand(cmd);
+          input.focus();
+        }
+      });
+    });
+
+    // Run 'whoami' on initial load to show life
+    setTimeout(() => {
+      executeCommand('whoami');
+    }, 600);
+  }
+
+  function escapeHTML(str) {
+    return str.replace(/[&<>'"]/g, 
+      tag => ({
+        '&': '&amp;',
+        '<': '&lt;',
+        '>': '&gt;',
+        "'": '&#39;',
+        '"': '&quot;'
+      }[tag] || tag)
+    );
+  }
+
+  /* ==========================================================================
+     8. INTERACTIVE WORKSHOP ESTIMATOR
+     ========================================================================== */
+  function initWorkshopEstimator() {
+    const durationBtns = document.querySelectorAll('#opt-duration .calc-choice-btn');
+    const trackBtns = document.querySelectorAll('#opt-track .calc-choice-btn');
+    const cohortBtns = document.querySelectorAll('#opt-cohort .calc-choice-btn');
+    const locBtns = document.querySelectorAll('#opt-location .calc-choice-btn');
+
+    const previewTitle = document.getElementById('preview-title');
+    const delivHours = document.getElementById('deliv-hours');
+    const delivLab = document.getElementById('deliv-lab');
+    const delivExercises = document.getElementById('deliv-exercises');
+    const delivTerms = document.getElementById('deliv-terms');
+    const inquireBtn = document.getElementById('estimator-inquire-btn');
+
+    function updateGroup(buttons, stateKey) {
+      buttons.forEach((btn) => {
+        btn.addEventListener('click', () => {
+          buttons.forEach((b) => b.classList.remove('selected'));
+          btn.classList.add('selected');
+          state.estimator[stateKey] = btn.dataset.val;
+          playCyberSound('click');
+          renderEstimator();
+        });
+      });
+    }
+
+    updateGroup(durationBtns, 'duration');
+    updateGroup(trackBtns, 'track');
+    updateGroup(cohortBtns, 'cohort');
+    updateGroup(locBtns, 'location');
+
+    function renderEstimator() {
+      const { duration, track, cohort, location } = state.estimator;
+
+      let title = '';
+      let hours = '';
+      let exercises = '';
+      let terms = '';
+
+      // Hours & format
+      if (duration === '1-day') {
+        hours = '<strong>6–8 Hours</strong> of Intensive Crash Bootcamp & Live Exploitation';
+        exercises = '<strong>6 Core Attack Scenarios</strong> (Web Recon, Burp Suite, SQLi, Payload Injection)';
+      } else if (duration === '2-day') {
+        hours = '<strong>14–16 Hours</strong> of In-Depth Hands-On Lab Work & CTF Contest';
+        exercises = '<strong>14+ Real-World Attack & Defense Scenarios</strong> with full sandbox VMs';
+      } else {
+        hours = '<strong>30+ Hours</strong> Multi-Day Faculty/Student FDP with Capstone Projects';
+        exercises = '<strong>25+ Modules</strong> including Cloud Hardening, SIEM Analytics & Python Automation';
+      }
+
+      // Track titles
+      if (track === 'ethical-vapt') {
+        title = `${duration === '1-day' ? '1-Day' : duration === '2-day' ? '2-Day' : 'Comprehensive'} Ethical Hacking & VAPT Program`;
+      } else if (track === 'soc-siem') {
+        title = `${duration === '1-day' ? '1-Day' : duration === '2-day' ? '2-Day' : 'Intensive'} SOC Operations, SIEM & Threat Hunting`;
+      } else if (track === 'cloud-sec') {
+        title = `${duration === '1-day' ? '1-Day' : duration === '2-day' ? '2-Day' : 'Advanced'} Cloud Infrastructure & AI Security Training`;
+      } else {
+        title = `Full-Spectrum Cybersecurity & Defensive Engineering Bootcamp`;
+      }
+
+      // Terms based on location
+      if (location === 'local') {
+        terms = 'Commercial terms: <strong>Negotiable daily trainer fee</strong>. Local Mysore campus (No accommodation required)';
+      } else if (location === 'state') {
+        terms = 'Commercial terms: <strong>Negotiable daily rate</strong> + travel & accommodation within Karnataka as agreed';
+      } else {
+        terms = 'Commercial terms: <strong>Negotiable daily rate</strong> + interstate flight/train & campus stay';
+      }
+
+      if (previewTitle) previewTitle.textContent = title;
+      if (delivHours) delivHours.innerHTML = hours;
+      if (delivExercises) delivExercises.innerHTML = exercises;
+      if (delivTerms) delivTerms.innerHTML = terms;
+    }
+
+    if (inquireBtn) {
+      inquireBtn.addEventListener('click', () => {
+        playCyberSound('open');
+        const formMsg = document.getElementById('form-msg');
+        const formType = document.getElementById('form-type');
+
+        if (formMsg) {
+          formMsg.value = `I would like to inquire about the ${previewTitle ? previewTitle.textContent : 'Cybersecurity Workshop'}.\n- Expected Cohort: ${state.estimator.cohort}\n- Location Mode: ${state.estimator.location}\n- Preferred Dates: [Please specify preferred dates]`;
+        }
+        if (formType) {
+          if (state.estimator.duration === 'multi-day') {
+            formType.value = 'Short-Term Training Program (STTP/FDP)';
+          } else {
+            formType.value = '1-2 Days Hands-On Workshop';
+          }
+        }
+
+        const contactSec = document.getElementById('contact');
+        if (contactSec) {
+          contactSec.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    }
+
+    renderEstimator();
+  }
+
+  /* ==========================================================================
+     9. SKILLS FILTER & REAL-TIME SEARCH MATRIX
+     ========================================================================== */
+  function initSkillsMatrix() {
+    const filterBtns = document.querySelectorAll('#skill-filters .filter-btn');
+    const searchInput = document.getElementById('skills-search');
+    const cards = document.querySelectorAll('#skills-container .skill-card');
+
+    let currentFilter = 'all';
+    let searchQuery = '';
+
+    function filterCards() {
+      cards.forEach((card) => {
+        const cat = card.dataset.category || '';
+        const tags = (card.dataset.tags || '').toLowerCase();
+        const text = card.textContent.toLowerCase();
+
+        const matchesCat = currentFilter === 'all' || cat === currentFilter;
+        const matchesSearch = searchQuery === '' || tags.includes(searchQuery) || text.includes(searchQuery);
+
+        if (matchesCat && matchesSearch) {
+          card.style.display = 'flex';
+          setTimeout(() => { card.style.opacity = '1'; }, 20);
+        } else {
+          card.style.display = 'none';
+          card.style.opacity = '0';
+        }
+      });
+    }
+
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        currentFilter = btn.dataset.filter;
+        playCyberSound('click');
+        filterCards();
+      });
+    });
+
+    if (searchInput) {
+      searchInput.addEventListener('input', (e) => {
+        searchQuery = e.target.value.trim().toLowerCase();
+        filterCards();
+      });
+    }
+  }
+
+  /* ==========================================================================
+     10. CAMPUS PHOTO GALLERY & GLASS LIGHTBOX MODAL
+     ========================================================================== */
+  function initCampusGallery() {
+    const galleryCards = document.querySelectorAll('#gallery-container .gallery-card');
+    const filterBtns = document.querySelectorAll('[data-gallery-filter]');
+    const modal = document.getElementById('lightbox-modal');
+    const modalImg = document.getElementById('lightbox-full-img');
+    const modalLoc = document.getElementById('lightbox-loc');
+    const modalCap = document.getElementById('lightbox-caption');
+    const closeBtn = document.getElementById('lightbox-close');
+    const prevBtn = document.getElementById('lightbox-prev');
+    const nextBtn = document.getElementById('lightbox-next');
+
+    state.galleryItems = Array.from(galleryCards).map((card) => ({
+      src: card.dataset.src,
+      caption: card.dataset.caption,
+      loc: card.dataset.loc,
+      date: card.dataset.date,
+      cat: card.dataset.galleryCat
+    }));
+
+    function showImage(index) {
+      if (!modal || index < 0 || index >= state.galleryItems.length) return;
+      state.currentGalleryIndex = index;
+      const item = state.galleryItems[index];
+
+      modalImg.src = item.src;
+      modalImg.alt = item.caption;
+      modalLoc.textContent = `${item.loc} · ${item.date}`;
+      modalCap.textContent = item.caption;
+    }
+
+    function openModal(index) {
+      playCyberSound('open');
+      showImage(index);
+      modal.classList.add('open');
+      document.body.style.overflow = 'hidden';
+    }
+
+    function closeModal() {
+      playCyberSound('click');
+      modal.classList.remove('open');
+      document.body.style.overflow = '';
+    }
+
+    galleryCards.forEach((card, idx) => {
+      card.addEventListener('click', () => openModal(idx));
+    });
+
+    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    if (modal) {
+      modal.addEventListener('click', (e) => {
+        if (e.target === modal) closeModal();
+      });
+    }
+
+    if (prevBtn) {
+      prevBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playCyberSound('click');
+        let newIdx = state.currentGalleryIndex - 1;
+        if (newIdx < 0) newIdx = state.galleryItems.length - 1;
+        showImage(newIdx);
+      });
+    }
+
+    if (nextBtn) {
+      nextBtn.addEventListener('click', (e) => {
+        e.stopPropagation();
+        playCyberSound('click');
+        let newIdx = (state.currentGalleryIndex + 1) % state.galleryItems.length;
+        showImage(newIdx);
+      });
+    }
+
+    // Keyboard support (Escape, Arrow Left, Arrow Right)
+    window.addEventListener('keydown', (e) => {
+      if (!modal.classList.contains('open')) return;
+      if (e.key === 'Escape') closeModal();
+      if (e.key === 'ArrowLeft' && prevBtn) prevBtn.click();
+      if (e.key === 'ArrowRight' && nextBtn) nextBtn.click();
+    });
+
+    // Gallery Category Filtering
+    filterBtns.forEach((btn) => {
+      btn.addEventListener('click', () => {
+        filterBtns.forEach((b) => b.classList.remove('active'));
+        btn.classList.add('active');
+        const filterVal = btn.dataset.galleryFilter;
+        playCyberSound('click');
+
+        galleryCards.forEach((card) => {
+          const cardCat = card.dataset.galleryCat;
+          if (filterVal === 'all' || cardCat === filterVal) {
+            card.style.display = 'block';
+          } else {
+            card.style.display = 'none';
+          }
+        });
+      });
+    });
+  }
+
+  /* ==========================================================================
+     11. FAQ ACCORDION INTERACTIVITY
+     ========================================================================== */
+  function initFAQ() {
+    const faqItems = document.querySelectorAll('.faq-item');
+
+    faqItems.forEach((item) => {
+      const question = item.querySelector('.faq-question');
+      if (!question) return;
+
+      question.addEventListener('click', () => {
+        const isActive = item.classList.contains('active');
+        playCyberSound('click');
+
+        // Close others
+        faqItems.forEach((other) => {
+          other.classList.remove('active');
+          const btn = other.querySelector('.faq-question');
+          if (btn) btn.setAttribute('aria-expanded', 'false');
+        });
+
+        if (!isActive) {
+          item.classList.add('active');
+          question.setAttribute('aria-expanded', 'true');
+        }
+      });
+    });
+  }
+
+  /* ==========================================================================
+     12. INQUIRY FORM SUBMISSION HANDLER
+     ========================================================================== */
+  function initInquiryForm() {
+    const form = document.getElementById('inquiry-form');
+    if (!form) return;
+
+    form.addEventListener('submit', (e) => {
+      e.preventDefault();
+      playCyberSound('cmd');
+
+      const name = document.getElementById('form-name').value.trim();
+      const email = document.getElementById('form-email').value.trim();
+      const org = document.getElementById('form-org').value.trim() || 'Not specified';
+      const type = document.getElementById('form-type').value;
+      const msg = document.getElementById('form-msg').value.trim();
+
+      const subject = encodeURIComponent(`Training Inquiry: ${type} - ${name} (${org})`);
+      const body = encodeURIComponent(
+        `Dear Jeevan,\n\n` +
+        `I would like to schedule a cybersecurity training engagement for our institution.\n\n` +
+        `-- CONTACT DETAILS --\n` +
+        `Name: ${name}\n` +
+        `Email: ${email}\n` +
+        `Institution/Organization: ${org}\n` +
+        `Engagement Type: ${type}\n\n` +
+        `-- REQUIREMENTS & TENTATIVE DATES --\n` +
+        `${msg}\n\n` +
+        `Looking forward to receiving your proposal and syllabus outline.\n\n` +
+        `Best regards,\n${name}`
+      );
+
+      // Open mailto link
+      window.location.href = `mailto:jeevndeepbagade@gmail.com?subject=${subject}&body=${body}`;
+    });
+  }
+
+  /* ==========================================================================
+     13. MOBILE MENU DRAWER
+     ========================================================================== */
+  function initMobileMenu() {
+    const toggleBtn = document.getElementById('mobile-toggle');
+    const drawer = document.getElementById('mobile-drawer');
+    const drawerLinks = document.querySelectorAll('.mobile-nav-link, .mobile-nav-drawer .btn');
+
+    if (!toggleBtn || !drawer) return;
+
+    toggleBtn.addEventListener('click', () => {
+      const isOpen = drawer.classList.contains('open');
+      playCyberSound('click');
+      drawer.classList.toggle('open', !isOpen);
+      toggleBtn.setAttribute('aria-expanded', String(!isOpen));
+      document.body.style.overflow = !isOpen ? 'hidden' : '';
+    });
+
+    drawerLinks.forEach((link) => {
+      link.addEventListener('click', () => {
+        drawer.classList.remove('open');
+        toggleBtn.setAttribute('aria-expanded', 'false');
+        document.body.style.overflow = '';
+      });
+    });
+  }
+
+  /* ==========================================================================
+     14. LIVE MYSORE IST CLOCK & COPYRIGHT YEAR
+     ========================================================================== */
+  function initClock() {
+    const clockEl = document.getElementById('ist-clock');
+    const yearEl = document.getElementById('copyright-year');
+
+    if (yearEl) {
+      yearEl.textContent = new Date().getFullYear();
+    }
+
+    if (!clockEl) return;
+
+    function updateIST() {
+      const options = {
+        timeZone: 'Asia/Kolkata',
+        hour: '2-digit',
+        minute: '2-digit',
+        second: '2-digit',
+        hour12: true
+      };
+      const now = new Date().toLocaleTimeString('en-US', options);
+      clockEl.textContent = `Mysore, Karnataka · IST: ${now}`;
+    }
+    updateIST();
+    setInterval(updateIST, 1000);
+  }
+
+  /* ==========================================================================
+     INITIALIZE ON DOM CONTENT LOADED
+     ========================================================================== */
+  document.addEventListener('DOMContentLoaded', () => {
+    initWebGLBackground();
+    init3DTiltCards();
+    initCyberTerminal();
+    initWorkshopEstimator();
+    initSkillsMatrix();
+    initCampusGallery();
+    initFAQ();
+    initInquiryForm();
+    initMobileMenu();
+    initClock();
+  });
+
+})();

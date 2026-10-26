@@ -1,0 +1,22 @@
+# Raw user uploads / photos in root
+WhatsApp*
+*.jpeg
+!assets/images/**
+
+# Screenshots & scratch files
+*.png
+screenshot*
+!assets/images/**
+
+# OS Files
+.DS_Store
+Thumbs.db
+
+# Logs & Environment
+*.log
+.env
+.env.local
+
+# Editor directories
+.vscode/
+.idea/

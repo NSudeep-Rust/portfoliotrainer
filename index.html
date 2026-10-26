@@ -1,0 +1,1223 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="color-scheme" content="light">
+  <meta name="theme-color" content="#f1f5f9">
+
+  <title>Jeevan Bagade — Certified Trainer | Cybersecurity &amp; Technology | Mysore, Karnataka</title>
+  <meta name="description" content="Jeevan Bagade — Certified Trainer for Cybersecurity, VAPT &amp; Technology based in Mysore, Karnataka. 3+ years experience, 9+ workshops delivered across India.">
+
+  <!-- Open Graph / Meta -->
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Jeevan Bagade — Certified Trainer">
+  <meta property="og:description" content="Certified Trainer for Cybersecurity &amp; Technology. Hands-on labs in Ethical Hacking, VAPT, SOC &amp; Cloud Security. 9+ workshops pan-India.">
+  <meta property="og:image" content="assets/images/portrait.jpg">
+  <meta property="og:url" content="https://www.jeevanbagade.in/">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <!-- Favicon -->
+  <link rel="icon" href="assets/images/favicon.svg" type="image/svg+xml">
+
+  <!-- Google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@500;600;700;800&display=swap" rel="stylesheet">
+
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="css/styles.css">
+</head>
+<body id="top">
+
+  <!-- WebGL 3D Background Canvas -->
+  <canvas id="webgl-canvas" aria-hidden="true"></canvas>
+
+  <!-- Clay Grid & Mouse Glow Followers -->
+  <div class="clay-grid-overlay" aria-hidden="true"></div>
+  <div class="mouse-glow-follower" id="mouse-glow" aria-hidden="true"></div>
+
+  <!-- Ambient Blurred Orbs (Soft Pastel) -->
+  <div class="ambient-orb orb-1" aria-hidden="true"></div>
+  <div class="ambient-orb orb-2" aria-hidden="true"></div>
+
+  <!-- Scroll Progress Indicator -->
+  <div class="scroll-progress-bar" id="scroll-progress" aria-hidden="true"></div>
+
+  <!-- Accessibility Skip Link -->
+  <a class="skip-link" href="#main">Skip to main content</a>
+
+  <!-- ======================= SITE HEADER ======================= -->
+  <header class="site-header" id="header">
+    <div class="container header-inner">
+      <a class="brand" href="#top" aria-label="Jeevan Bagade Portfolio Homepage">
+        <div class="brand-badge" aria-hidden="true">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            <path d="m9 12 2 2 4-4"/>
+          </svg>
+        </div>
+        <div class="brand-text">
+          <span class="brand-name">
+            Jeevan Bagade
+            <span class="brand-status-dot" title="Available for workshops"></span>
+          </span>
+          <span class="brand-sub">Certified Trainer</span>
+        </div>
+      </a>
+
+      <!-- Desktop Nav -->
+      <nav class="nav-desktop" aria-label="Main Navigation">
+        <a class="nav-link" href="#about">About</a>
+        <a class="nav-link" href="#terminal">Terminal</a>
+        <a class="nav-link" href="#skills">Curriculum</a>
+        <a class="nav-link" href="#credentials">Credentials</a>
+        <a class="nav-link" href="#estimator">Estimator</a>
+        <a class="nav-link" href="#gallery">Photos</a>
+        <a class="nav-link" href="#engagements">Models</a>
+        <a class="nav-link" href="#faq">FAQ</a>
+      </nav>
+
+      <!-- Action buttons -->
+      <div class="header-actions">
+        <!-- Audio Synth Toggle -->
+        <button class="audio-toggle-btn" id="audio-toggle" type="button" aria-label="Toggle cyber audio effects" title="Toggle audio sound FX">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14"></path>
+          </svg>
+        </button>
+
+        <a class="btn btn-primary btn-sm" href="#contact">
+          <span>Book Session</span>
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5">
+            <line x1="5" y1="12" x2="19" y2="12"></line>
+            <polyline points="12 5 19 12 12 19"></polyline>
+          </svg>
+        </a>
+
+        <!-- Mobile Menu Toggle -->
+        <button class="nav-mobile-toggle" id="mobile-toggle" type="button" aria-expanded="false" aria-controls="mobile-drawer" aria-label="Toggle Navigation">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+            <line x1="3" y1="12" x2="21" y2="12"></line>
+            <line x1="3" y1="6" x2="21" y2="6"></line>
+            <line x1="3" y1="18" x2="21" y2="18"></line>
+          </svg>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <!-- Mobile Drawer -->
+  <div class="mobile-nav-drawer" id="mobile-drawer">
+    <a class="mobile-nav-link" href="#about">About <span>→</span></a>
+    <a class="mobile-nav-link" href="#terminal">Terminal Simulator <span>→</span></a>
+    <a class="mobile-nav-link" href="#skills">Curriculum &amp; Labs <span>→</span></a>
+    <a class="mobile-nav-link" href="#credentials">Credentials <span>→</span></a>
+    <a class="mobile-nav-link" href="#estimator">Workshop Estimator <span>→</span></a>
+    <a class="mobile-nav-link" href="#gallery">On Campus Photos <span>→</span></a>
+    <a class="mobile-nav-link" href="#engagements">Engagement Models <span>→</span></a>
+    <a class="mobile-nav-link" href="#faq">FAQ <span>→</span></a>
+    <a class="btn btn-primary btn-block mt-3" href="#contact">Schedule Workshop Now</a>
+  </div>
+
+  <main id="main">
+
+    <!-- ======================= HERO SECTION (CLAY WHITE) ======================= -->
+    <section class="hero-section" id="hero">
+      <div class="container hero-grid">
+        <div class="hero-content">
+          
+          <div class="hero-badge-pill">
+            <span class="brand-status-dot"></span>
+            <span>AVAILABLE FOR ON-CAMPUS WORKSHOPS PAN-INDIA</span>
+          </div>
+
+          <h1 class="hero-title">
+            <span class="title-lead">Jeevan Bagade</span>
+            Cybersecurity &amp; Technology <br>
+            <span class="gradient-text">Certified Trainer</span>
+          </h1>
+
+          <p class="hero-tagline">
+            Freelance <strong>Cybersecurity &amp; Technology Certified Trainer</strong> based in Mysore. 
+            Empowering engineering colleges, academies, and training vendors across India with 
+            <strong>100% lab-driven, attack-and-defense</strong> workshop experiences.
+          </p>
+
+          <div class="hero-meta-strip">
+            <div class="hero-meta-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>Mysore, Karnataka, India</span>
+            </div>
+            <div class="hero-meta-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/></svg>
+              <span>Pan-India On-Site Travel</span>
+            </div>
+            <div class="hero-meta-item">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><path d="m4.93 4.93 4.24 4.24"/><path d="m14.83 9.17 4.24-4.24"/></svg>
+              <span>English · Hindi · Kannada</span>
+            </div>
+          </div>
+
+          <div class="hero-cta-group">
+            <a class="btn btn-primary btn-lg" href="#contact">
+              <span>Book a Workshop</span>
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+            </a>
+            <a class="btn btn-secondary btn-lg" href="#terminal">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              <span>Try Live Terminal</span>
+            </a>
+            <a class="btn btn-terminal btn-lg" href="#gallery">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/></svg>
+              <span>Workshop Photos</span>
+            </a>
+          </div>
+
+          <!-- Stats Row -->
+          <div class="hero-stats-row">
+            <div class="stat-item">
+              <span class="stat-value">9+</span>
+              <span class="stat-label">Workshops Delivered</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">3+ yrs</span>
+              <span class="stat-label">Industry Training</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">1,500+</span>
+              <span class="stat-label">Students Mentored</span>
+            </div>
+            <div class="stat-item">
+              <span class="stat-value">100%</span>
+              <span class="stat-label">Hands-On Labs</span>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- Hero Visual Frame with Real Trainer Photo -->
+        <div class="hero-visual-card">
+          <div class="clay-card hero-portrait-frame clay-card-interactive" id="portrait-card">
+            <div class="portrait-inner">
+              <img class="portrait-img" src="assets/images/portrait.jpg" alt="Jeevan Bagade — Certified Trainer" width="600" height="800" fetchpriority="high">
+              <!-- Pillowy Tagline Badge on Photo -->
+              <div class="portrait-badge-tagline">
+                <span class="badge-pulse-dot"></span>
+                <span>Certified Trainer</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= MARQUEE RUNNER ======================= -->
+    <div class="marquee-container" aria-hidden="true">
+      <div class="marquee-track">
+        <div class="marquee-item"><span class="marquee-dot"></span> Certified Trainer</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Ethical Hacking</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> VAPT Assessment</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Kali Linux &amp; Burp Suite Pro</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> SOC &amp; SIEM Operations</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Splunk &amp; Wireshark</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Network Penetration Testing</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Cloud Security (AWS &amp; Azure)</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> AI &amp; Machine Learning Security</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Python Automation &amp; Scapy</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Metasploit &amp; OpenVAS</div>
+        <!-- Duplicate for infinite seamless scroll -->
+        <div class="marquee-item"><span class="marquee-dot"></span> Certified Trainer</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Ethical Hacking</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> VAPT Assessment</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Kali Linux &amp; Burp Suite Pro</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> SOC &amp; SIEM Operations</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Splunk &amp; Wireshark</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Network Penetration Testing</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Cloud Security (AWS &amp; Azure)</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> AI &amp; Machine Learning Security</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Python Automation &amp; Scapy</div>
+        <div class="marquee-item"><span class="marquee-dot"></span> Metasploit &amp; OpenVAS</div>
+      </div>
+    </div>
+
+    <!-- ======================= INTERACTIVE TERMINAL ======================= -->
+    <section class="section" id="terminal" aria-labelledby="terminal-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">Interactive Terminal</span>
+          <h2 class="section-title" id="terminal-heading">
+            Live <span class="gradient-text">Security Console</span>
+          </h2>
+          <p class="section-desc">
+            Interact with the trainer terminal directly. Click the quick command chips or type commands in the prompt.
+          </p>
+        </header>
+
+        <div class="terminal-wrapper">
+          <div class="terminal-header">
+            <div class="terminal-controls">
+              <span class="terminal-dot dot-red"></span>
+              <span class="terminal-dot dot-yellow"></span>
+              <span class="terminal-dot dot-green"></span>
+            </div>
+            <div class="terminal-title">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m10 10-2 2 2 2"/></svg>
+              <span>root@jeevan-sec: ~ (bash / zsh)</span>
+            </div>
+            <div style="font-size: 0.72rem; color: #34d399; font-family: var(--font-mono);">
+              ● LIVE
+            </div>
+          </div>
+
+          <div class="terminal-body" id="terminal-body">
+            <div class="terminal-intro">
+              Type <strong style="color: #38bdf8;">help</strong> for commands, or click any quick shortcut:
+            </div>
+
+            <!-- Quick Action Chips -->
+            <div class="terminal-chips">
+              <button class="term-chip" type="button" data-cmd="whoami">whoami</button>
+              <button class="term-chip" type="button" data-cmd="skills">skills</button>
+              <button class="term-chip" type="button" data-cmd="workshops">workshops</button>
+              <button class="term-chip" type="button" data-cmd="certs">certs</button>
+              <button class="term-chip" type="button" data-cmd="tools">tools</button>
+              <button class="term-chip" type="button" data-cmd="quote">quote</button>
+              <button class="term-chip" type="button" data-cmd="contact">contact</button>
+              <button class="term-chip" type="button" data-cmd="clear">clear</button>
+            </div>
+
+            <!-- Output Entries Container -->
+            <div class="terminal-output" id="terminal-output">
+              <!-- Dynamically populated -->
+            </div>
+
+            <!-- Input Row -->
+            <div class="terminal-input-row">
+              <span class="terminal-prompt-user">jeevan@kali</span>:<span class="terminal-prompt-path">~#</span>
+              <input class="terminal-input" id="terminal-input" type="text" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" placeholder="type 'help' or command..." aria-label="Terminal command prompt">
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= ABOUT SECTION (CLAY WHITE) ======================= -->
+    <section class="section" id="about" aria-labelledby="about-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">01 · Profile &amp; Mission</span>
+          <h2 class="section-title" id="about-heading">
+            Battle-Tested Training for <span class="gradient-text">Real-World Security</span>
+          </h2>
+          <p class="section-desc">
+            Transforming students and technical teams from passive listeners into active security analysts, penetration testers, and threat responders.
+          </p>
+        </header>
+
+        <div class="about-grid">
+          <article class="clay-card about-card-main clay-card-interactive">
+            <p class="about-lead">
+              I am <strong>Jeevan Bagade</strong>, a freelance <strong>Certified Trainer</strong> based in <strong>Mysore, Karnataka</strong> with <strong>3+ years of experience</strong> conducting intensive workshops for universities, polytechnics, and corporate training vendors.
+            </p>
+
+            <div class="about-body">
+              <p>
+                My educational background includes a <strong>Master of Computer Applications (MCA) from MIT World Peace University (MIT-WPU), Pune</strong> and a <strong>BCA from JSS SMI College, Dharwad</strong>. As a <strong>Certified Trainer</strong>, I bridge the gap between academic theory and offensive/defensive tradecraft.
+              </p>
+              <p>
+                Having delivered <strong>9+ multi-day cybersecurity workshops</strong> across Mysore, Bengaluru, Dharwad, Hubballi, Pune, and Hyderabad, I know exactly where university students struggle: moving from theoretical textbook concepts to practical, real-world exploitation and defense.
+              </p>
+              <p>
+                My training modules feature isolated local virtual laboratories (Kali Linux, Burp Suite, Metasploit, Wireshark, Splunk, Docker) where students attack and secure simulated web apps, networks, and cloud infrastructure with zero risk to host infrastructure.
+              </p>
+            </div>
+
+            <!-- Core Training Pillars -->
+            <div class="about-pillars">
+              <div class="pillar-item">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+                <h4>100% Hands-On Labs</h4>
+                <p>Every participant executes real attacks &amp; defensive countermeasures in isolated sandboxes.</p>
+              </div>
+
+              <div class="pillar-item">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/></svg>
+                <h4>Pan-India Mobility</h4>
+                <p>On-site campus visits across Karnataka and interstate with full lab setup assistance.</p>
+              </div>
+
+              <div class="pillar-item">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+                <h4>Research-Backed</h4>
+                <p>Published research in AI-driven IoT management and digital transformation architectures.</p>
+              </div>
+            </div>
+          </article>
+
+          <!-- Sidebar Facts & Languages -->
+          <div class="facts-sidebar">
+            <div class="clay-card facts-panel clay-card-interactive">
+              <h3>
+                <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="12" r="10"/><line x1="12" y1="16" x2="12" y2="12"/><line x1="12" y1="8" x2="12.01" y2="8"/></svg>
+                Instructor Quick Facts
+              </h3>
+
+              <div class="facts-list">
+                <div class="fact-row">
+                  <span class="fact-label">Tag Line</span>
+                  <span class="fact-value">Certified Trainer</span>
+                </div>
+                <div class="fact-row">
+                  <span class="fact-label">Training Track</span>
+                  <span class="fact-value">Cybersecurity, VAPT, SOC &amp; Cloud</span>
+                </div>
+                <div class="fact-row">
+                  <span class="fact-label">Academic Degrees</span>
+                  <span class="fact-value">MCA (MIT-WPU Pune) · BCA (JSS Dharwad)</span>
+                </div>
+                <div class="fact-row">
+                  <span class="fact-label">Base Location</span>
+                  <span class="fact-value">Mysore, Karnataka, India</span>
+                </div>
+                <div class="fact-row">
+                  <span class="fact-label">Travel Radius</span>
+                  <span class="fact-value">Pan-India (Flights / Trains / On-Site)</span>
+                </div>
+                <div class="fact-row">
+                  <span class="fact-label">Workshop Formats</span>
+                  <span class="fact-value">1-Day Bootcamps to 2-Week FDP / STTP</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="clay-card languages-box">
+              <div style="font-size: 0.82rem; font-family: var(--font-mono); color: var(--text-muted); display: flex; align-items: center; gap: 0.4rem;">
+                <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="m5 8 6 6"/><path d="m4 14 6-6 2-3"/><path d="M2 5h12"/><path d="M7 2h1"/><path d="m22 22-5-10-5 10"/><path d="M14 18h6"/></svg>
+                Instructional Languages
+              </div>
+              <div class="lang-grid">
+                <div class="lang-pill">
+                  <span class="lang-name">English</span>
+                  <span class="lang-level">Professional</span>
+                </div>
+                <div class="lang-pill">
+                  <span class="lang-name">Hindi</span>
+                  <span class="lang-level">Fluent</span>
+                </div>
+                <div class="lang-pill">
+                  <span class="lang-name">Kannada</span>
+                  <span class="lang-level">Native</span>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= SKILLS & LABS MATRIX ======================= -->
+    <section class="section" id="skills" aria-labelledby="skills-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">02 · Curriculum Matrix</span>
+          <h2 class="section-title" id="skills-heading">
+            Comprehensive <span class="gradient-text">Lab Modules</span>
+          </h2>
+          <p class="section-desc">
+            Filter by domain or search for specific tools, protocols, and security standards to customize your college syllabus.
+          </p>
+        </header>
+
+        <!-- Filter & Search Controls -->
+        <div class="skills-filter-bar">
+          <div class="filter-pills" id="skill-filters">
+            <button class="filter-btn active" type="button" data-filter="all">All Modules</button>
+            <button class="filter-btn" type="button" data-filter="vapt">VAPT &amp; Offensive</button>
+            <button class="filter-btn" type="button" data-filter="tools">Security Tools</button>
+            <button class="filter-btn" type="button" data-filter="cloud">Cloud &amp; AI Security</button>
+            <button class="filter-btn" type="button" data-filter="devops">DevOps &amp; Python</button>
+          </div>
+
+          <div class="skills-search-wrap">
+            <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="11" cy="11" r="8"/><path d="m21 21-4.3-4.3"/></svg>
+            <input class="skills-search-input" id="skills-search" type="text" placeholder="Search tool or topic (e.g., Burp, Kali, AWS)..." aria-label="Search skills and tools">
+          </div>
+        </div>
+
+        <!-- Skills Grid -->
+        <div class="skills-grid" id="skills-container">
+
+          <!-- Card 1 -->
+          <article class="clay-card skill-card clay-card-interactive" data-category="vapt" data-tags="ethical hacking vapt penetration testing owasp red team">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+              </div>
+              <span class="skill-badge">Offensive</span>
+            </div>
+            <h3 class="skill-title">Ethical Hacking &amp; VAPT</h3>
+            <p class="skill-desc">End-to-end vulnerability assessment and penetration testing across web applications, networks, and internal corporate endpoints.</p>
+            <div class="skill-tags">
+              <span class="tech-tag">OWASP Top 10</span>
+              <span class="tech-tag">Web Pentesting</span>
+              <span class="tech-tag">SQL Injection</span>
+              <span class="tech-tag">XSS &amp; CSRF</span>
+              <span class="tech-tag">Privilege Escalation</span>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="clay-card skill-card clay-card-interactive" data-category="tools" data-tags="kali linux burp suite nmap wireshark metasploit">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
+              </div>
+              <span class="skill-badge">Lab Essentials</span>
+            </div>
+            <h3 class="skill-title">Security Tools &amp; Kali Labs</h3>
+            <p class="skill-desc">Hands-on configuration, scripting, and operation of industry-standard security tool suites for packet interception, exploit delivery, and scanning.</p>
+            <div class="skill-tags">
+              <span class="tech-tag">Kali Linux</span>
+              <span class="tech-tag">Burp Suite Pro</span>
+              <span class="tech-tag">Nmap</span>
+              <span class="tech-tag">Wireshark</span>
+              <span class="tech-tag">Metasploit</span>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="clay-card skill-card clay-card-interactive" data-category="vapt" data-tags="soc siem splunk incident response blue team threat hunting">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m10 16-2 5"/></svg>
+              </div>
+              <span class="skill-badge">Blue Team</span>
+            </div>
+            <h3 class="skill-title">SOC Operations &amp; SIEM</h3>
+            <p class="skill-desc">Defensive security telemetry, log analysis, threat hunting, malware indicators of compromise (IOCs), and security operations center triage.</p>
+            <div class="skill-tags">
+              <span class="tech-tag">Splunk SIEM</span>
+              <span class="tech-tag">Threat Hunting</span>
+              <span class="tech-tag">Log Analysis</span>
+              <span class="tech-tag">Incident Response</span>
+              <span class="tech-tag">MITRE ATT&amp;CK</span>
+            </div>
+          </article>
+
+          <!-- Card 4 -->
+          <article class="clay-card skill-card clay-card-interactive" data-category="cloud" data-tags="cloud security aws azure iam kubernetes docker cloudtrail">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M17.5 19H9a7 7 0 1 1 6.71-9h1.79a4.5 4.5 0 1 1 0 9Z"/></svg>
+              </div>
+              <span class="skill-badge">Cloud Infra</span>
+            </div>
+            <h3 class="skill-title">Cloud Infrastructure Security</h3>
+            <p class="skill-desc">Securing cloud workloads on Amazon Web Services &amp; Microsoft Azure. Hardening IAM roles, cloud network VPCs, S3 bucket policies, and audit logs.</p>
+            <div class="skill-tags">
+              <span class="tech-tag">AWS CloudTrail</span>
+              <span class="tech-tag">Azure Defender</span>
+              <span class="tech-tag">IAM Hardening</span>
+              <span class="tech-tag">Cloud Forensics</span>
+            </div>
+          </article>
+
+          <!-- Card 5 -->
+          <article class="clay-card skill-card clay-card-interactive" data-category="cloud" data-tags="ai machine learning deep learning prompt injection llm security">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M12 2a4 4 0 0 1 4 4v1a4 4 0 0 1-4 4 4 4 0 0 1-4-4V6a4 4 0 0 1 4-4Z"/><path d="M18 10a6 6 0 0 1 6 6v2H0v-2a6 6 0 0 1 6-6"/></svg>
+              </div>
+              <span class="skill-badge">AI / ML</span>
+            </div>
+            <h3 class="skill-title">AI &amp; Machine Learning in Cyber</h3>
+            <p class="skill-desc">AI-assisted vulnerability triage, automated code security audits, LLM security guidelines (prompt injection defense), and AI threat modeling.</p>
+            <div class="skill-tags">
+              <span class="tech-tag">AI Threat Models</span>
+              <span class="tech-tag">LLM Security</span>
+              <span class="tech-tag">Anomaly Detection</span>
+              <span class="tech-tag">Certified Trainer</span>
+            </div>
+          </article>
+
+          <!-- Card 6 -->
+          <article class="clay-card skill-card clay-card-interactive" data-category="devops" data-tags="python bash docker linux git automation scripting">
+            <div class="skill-header">
+              <div class="skill-icon-wrap">
+                <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="16 18 22 12 16 6"></polyline><polyline points="8 6 2 12 8 18"></polyline></svg>
+              </div>
+              <span class="skill-badge">Automation</span>
+            </div>
+            <h3 class="skill-title">Python Automation &amp; DevOps</h3>
+            <p class="skill-desc">Custom Python exploit scripting, packet crafting with Scapy, automated port scanners, Docker containerization of vulnerable labs, and Linux administration.</p>
+            <div class="skill-tags">
+              <span class="tech-tag">Python Scripting</span>
+              <span class="tech-tag">Scapy</span>
+              <span class="tech-tag">Docker Labs</span>
+              <span class="tech-tag">Linux Admin</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= CREDENTIALS (CLAY WHITE) ======================= -->
+    <section class="section" id="credentials" aria-labelledby="cred-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">03 · Verified Qualifications</span>
+          <h2 class="section-title" id="cred-heading">
+            Education, Certifications &amp; <span class="gradient-text">Research</span>
+          </h2>
+          <p class="section-desc">
+            A solid academic foundation coupled with industry certifications and published technological research.
+          </p>
+        </header>
+
+        <div class="cred-layout">
+          <!-- Column 1: Education -->
+          <div class="cred-column">
+            <h3 class="cred-col-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M21.42 10.92a1 1 0 0 0-.02-1.84L12.83 5.18a2 2 0 0 0-1.66 0L2.6 9.08a1 1 0 0 0 0 1.83l8.57 3.91a2 2 0 0 0 1.66 0Z"/><path d="M22 10v6"/><path d="M6 12.5V16a6 3 0 0 0 12 0v-3.5"/></svg>
+              Education
+            </h3>
+
+            <div class="clay-card cred-item-card clay-card-interactive">
+              <h4>Master of Computer Applications (MCA)</h4>
+              <span class="cred-issuer">MIT World Peace University (MIT-WPU), Pune</span>
+              <p class="cred-desc">Advanced postgraduate focus on system architecture, network security, database engineering, and applied computer science.</p>
+            </div>
+
+            <div class="clay-card cred-item-card clay-card-interactive">
+              <h4>Bachelor of Computer Applications (BCA)</h4>
+              <span class="cred-issuer">JSS SMI College, Dharwad</span>
+              <p class="cred-desc">Core software development, object-oriented programming, data structures, and foundational computer networking principles.</p>
+            </div>
+          </div>
+
+          <!-- Column 2: Certifications -->
+          <div class="cred-column">
+            <h3 class="cred-col-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><circle cx="12" cy="8" r="6"/><path d="M15.477 12.89 1.515 8.526a.5.5 0 0 1-.81.47l-3.58-2.687a1 1 0 0 0-1.197 0l-3.586 2.686a.5.5 0 0 1-.81-.469l1.514-8.526"/></svg>
+              Certifications
+            </h3>
+
+            <div class="clay-card cred-item-card clay-card-interactive">
+              <h4>Certified Trainer</h4>
+              <span class="cred-issuer">Professional Pedagogy &amp; Technical Instruction</span>
+              <p class="cred-desc">Validated trainer credentials in technical workshop facilitation, hands-on lab mentoring, and student outcomes assessment.</p>
+            </div>
+
+            <div class="clay-card cred-item-card clay-card-interactive">
+              <h4>Programming Fundamentals in Python</h4>
+              <span class="cred-issuer">Infosys Springboard</span>
+              <p class="cred-desc">Proficiency in automated data processing, algorithmic programming, and scripting libraries.</p>
+            </div>
+
+            <div class="clay-card cred-item-card clay-card-interactive">
+              <h4>Agile Management &amp; Leadership</h4>
+              <span class="cred-issuer">HP LIFE &amp; Professional Bodies</span>
+              <p class="cred-desc">Sprint execution, cohort management, team leadership, and technology project delivery.</p>
+            </div>
+          </div>
+
+          <!-- Column 3: Research -->
+          <div class="cred-column">
+            <h3 class="cred-col-title">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M4 19.5v-15A2.5 2.5 0 0 1 6.5 2H19a1 1 0 0 1 1 1v18a1 1 0 0 1-1 1H6.5a1 1 0 0 1 0-5H20"/></svg>
+              Research &amp; Papers
+            </h3>
+
+            <div class="clay-card cred-item-card clay-card-interactive">
+              <h4>AI-Driven Management of IoT Devices</h4>
+              <span class="cred-issuer">Peer-Reviewed Research Publication</span>
+              <p class="cred-desc">Investigated machine learning algorithms for telemetry monitoring, threat vector anomaly detection, and automated smart device orchestration.</p>
+            </div>
+
+            <div class="clay-card cred-item-card clay-card-interactive">
+              <h4>Digital Transformation in Temple Systems</h4>
+              <span class="cred-issuer">Institutional Systems Research</span>
+              <p class="cred-desc">Analyzed digital processes, secure database integration, and operational transformation in ISKCON institutional frameworks.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= INTERACTIVE ESTIMATOR ======================= -->
+    <section class="section" id="estimator" aria-labelledby="estimator-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">04 · Instant Scope Builder</span>
+          <h2 class="section-title" id="estimator-heading">
+            Interactive <span class="gradient-text">Workshop Estimator</span>
+          </h2>
+          <p class="section-desc">
+            For College HODs, Placement Officers &amp; Training Vendors: Configure your required workshop parameters to generate an instant curriculum outline and inquiry draft.
+          </p>
+        </header>
+
+        <div class="estimator-container">
+          <!-- Estimator Controls -->
+          <div class="clay-card estimator-controls">
+            
+            <!-- Group 1: Duration -->
+            <div class="calc-group">
+              <label class="calc-label">1. Workshop Duration &amp; Format</label>
+              <div class="calc-btn-group" id="opt-duration">
+                <button class="calc-choice-btn" type="button" data-val="1-day">1 Day (6–8 hrs Bootcamp)</button>
+                <button class="calc-choice-btn selected" type="button" data-val="2-day">2 Days (14 hrs Hands-on)</button>
+                <button class="calc-choice-btn" type="button" data-val="multi-day">5–10 Days (Intensive FDP)</button>
+              </div>
+            </div>
+
+            <!-- Group 2: Focus Track -->
+            <div class="calc-group">
+              <label class="calc-label">2. Primary Training Track</label>
+              <div class="calc-btn-group" id="opt-track">
+                <button class="calc-choice-btn selected" type="button" data-val="ethical-vapt">Ethical Hacking &amp; VAPT</button>
+                <button class="calc-choice-btn" type="button" data-val="soc-siem">SOC &amp; Threat Defense</button>
+                <button class="calc-choice-btn" type="button" data-val="cloud-sec">Cloud &amp; AI Security</button>
+                <button class="calc-choice-btn" type="button" data-val="full-sec">Full-Spectrum Cyber</button>
+              </div>
+            </div>
+
+            <!-- Group 3: Cohort Size -->
+            <div class="calc-group">
+              <label class="calc-label">3. Expected Cohort Size</label>
+              <div class="calc-btn-group" id="opt-cohort">
+                <button class="calc-choice-btn" type="button" data-val="small">Up to 40 Students</button>
+                <button class="calc-choice-btn selected" type="button" data-val="medium">40 – 100 Students</button>
+                <button class="calc-choice-btn" type="button" data-val="large">100+ Multiple Batches</button>
+              </div>
+            </div>
+
+            <!-- Group 4: Location -->
+            <div class="calc-group">
+              <label class="calc-label">4. Delivery Mode &amp; Campus Location</label>
+              <div class="calc-btn-group" id="opt-location">
+                <button class="calc-choice-btn" type="button" data-val="local">Mysore (Local Campus)</button>
+                <button class="calc-choice-btn selected" type="button" data-val="state">Karnataka (Bengaluru/Hubballi/etc)</button>
+                <button class="calc-choice-btn" type="button" data-val="interstate">Interstate (Pan-India Travel)</button>
+              </div>
+            </div>
+
+          </div>
+
+          <!-- Dynamic Output Preview Card -->
+          <div class="clay-card estimator-preview">
+            <div class="preview-header">
+              <span class="preview-badge" id="preview-badge">Custom Plan Recommended</span>
+              <h3 class="preview-title" id="preview-title">2-Day Intensive VAPT &amp; Red Team Workshop</h3>
+            </div>
+
+            <div class="preview-deliverables" id="preview-deliverables">
+              <div class="deliv-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span id="deliv-hours"><strong>14 Hours</strong> of Instructor-Led Classroom &amp; Lab Sessions</span>
+              </div>
+              <div class="deliv-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span id="deliv-lab">Custom pre-built <strong>VirtualBox / VMware Kali Lab VMs</strong> provided for college lab PCs</span>
+              </div>
+              <div class="deliv-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span id="deliv-exercises"><strong>12+ Real Attack Scenarios</strong> (SQLi, XSS, Nmap port mapping, Metasploit payloads)</span>
+              </div>
+              <div class="deliv-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span>Complete curriculum slides, cheat sheets, &amp; lab guides provided to all participants</span>
+              </div>
+              <div class="deliv-row">
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                <span id="deliv-terms">Commercial terms: <strong>Negotiable daily rate</strong> + travel &amp; accommodation as agreed</span>
+              </div>
+            </div>
+
+            <div class="estimator-action-box">
+              <button class="btn btn-primary btn-block" id="estimator-inquire-btn" type="button">
+                <span>Inquire With This Configuration</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="5" y1="12" x2="19" y2="12"></line><polyline points="12 5 19 12 12 19"></polyline></svg>
+              </button>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= CAMPUS GALLERY ======================= -->
+    <section class="section" id="gallery" aria-labelledby="gallery-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">05 · Campus Footprint</span>
+          <h2 class="section-title" id="gallery-heading">
+            Classrooms, Labs &amp; <span class="gradient-text">Workshops</span>
+          </h2>
+          <p class="section-desc">
+            Visual highlights from 9+ hands-on workshops conducted across leading colleges, training vendor cohorts, and academic partner institutions.
+          </p>
+        </header>
+
+        <!-- Gallery Filters -->
+        <div class="gallery-filter-bar">
+          <button class="filter-btn active" type="button" data-gallery-filter="all">All Captures</button>
+          <button class="filter-btn" type="button" data-gallery-filter="mysore">Mysore</button>
+          <button class="filter-btn" type="button" data-gallery-filter="bengaluru">Bengaluru</button>
+          <button class="filter-btn" type="button" data-gallery-filter="pune">Pune</button>
+          <button class="filter-btn" type="button" data-gallery-filter="dharwad">Dharwad / Hubballi</button>
+          <button class="filter-btn" type="button" data-gallery-filter="hyderabad">Hyderabad</button>
+        </div>
+
+        <!-- Gallery Cards -->
+        <div class="gallery-grid" id="gallery-container">
+
+          <!-- Photo 1 -->
+          <div class="gallery-card clay-card" data-gallery-cat="mysore" data-src="assets/images/training-01.jpg" data-caption="Hands-On Ethical Hacking Lab Session" data-loc="Mysore, Karnataka" data-date="Jan 2026">
+            <img class="gallery-img" src="assets/images/training-01.jpg" alt="Hands-on ethical hacking workshop in computer lab" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Mysore, Karnataka
+              </span>
+              <h3 class="gallery-caption">Hands-On Ethical Hacking Lab</h3>
+              <span class="gallery-date">Jan 2026 · 60 Students</span>
+            </div>
+          </div>
+
+          <!-- Photo 2 -->
+          <div class="gallery-card clay-card" data-gallery-cat="bengaluru" data-src="assets/images/training-02.jpg" data-caption="Cybersecurity Fundamentals & VAPT Keynote" data-loc="Bengaluru, Karnataka" data-date="Nov 2025">
+            <img class="gallery-img" src="assets/images/training-02.jpg" alt="Students attending cybersecurity seminar in auditorium" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Bengaluru, Karnataka
+              </span>
+              <h3 class="gallery-caption">VAPT Keynote &amp; Live Attack Demo</h3>
+              <span class="gallery-date">Nov 2025 · 120 Attendees</span>
+            </div>
+          </div>
+
+          <!-- Photo 3 -->
+          <div class="gallery-card clay-card" data-gallery-cat="dharwad" data-src="assets/images/training-03.jpg" data-caption="Kali Linux & Network Defense Workshop" data-loc="Dharwad, Karnataka" data-date="Sep 2025">
+            <img class="gallery-img" src="assets/images/training-03.jpg" alt="Trainer demonstrating network security tools on projector" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Dharwad, Karnataka
+              </span>
+              <h3 class="gallery-caption">Kali Linux &amp; Network Defense</h3>
+              <span class="gallery-date">Sep 2025 · 75 Students</span>
+            </div>
+          </div>
+
+          <!-- Photo 4 -->
+          <div class="gallery-card clay-card" data-gallery-cat="pune" data-src="assets/images/training-04.jpg" data-caption="Cloud Security & AWS Architecture Session" data-loc="Pune, Maharashtra" data-date="Jul 2025">
+            <img class="gallery-img" src="assets/images/training-04.jpg" alt="Cloud security and AWS workshop with engineering students" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Pune, Maharashtra
+              </span>
+              <h3 class="gallery-caption">Cloud Security &amp; AWS Hardening</h3>
+              <span class="gallery-date">Jul 2025 · 90 Engineering Students</span>
+            </div>
+          </div>
+
+          <!-- Photo 5 -->
+          <div class="gallery-card clay-card" data-gallery-cat="dharwad" data-src="assets/images/training-05.jpg" data-caption="SOC Operations & Splunk SIEM Demonstration" data-loc="Hubballi, Karnataka" data-date="Apr 2025">
+            <img class="gallery-img" src="assets/images/training-05.jpg" alt="VAPT demonstration session with SOC tools on projector" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Hubballi, Karnataka
+              </span>
+              <h3 class="gallery-caption">SOC &amp; SIEM Threat Hunting</h3>
+              <span class="gallery-date">Apr 2025 · 65 Participants</span>
+            </div>
+          </div>
+
+          <!-- Photo 6 -->
+          <div class="gallery-card clay-card" data-gallery-cat="hyderabad" data-src="assets/images/training-06.jpg" data-caption="AI-Driven Cyber Defenses & Awareness" data-loc="Hyderabad, Telangana" data-date="Feb 2025">
+            <img class="gallery-img" src="assets/images/training-06.jpg" alt="AI and cybersecurity workshop group discussion" loading="lazy">
+            <div class="gallery-overlay">
+              <span class="gallery-tag">
+                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                Hyderabad, Telangana
+              </span>
+              <h3 class="gallery-caption">AI &amp; Machine Learning in Cyber</h3>
+              <span class="gallery-date">Feb 2025 · 85 Students</span>
+            </div>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+    <!-- Glassmorphic Lightbox Modal -->
+    <div class="lightbox-modal" id="lightbox-modal" role="dialog" aria-modal="true" aria-label="Campus photo viewer">
+      <div class="lightbox-content">
+        <button class="lightbox-close-btn" id="lightbox-close" type="button" aria-label="Close photo viewer">
+          <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="18" y1="6" x2="6" y2="18"></line><line x1="6" y1="6" x2="18" y2="18"></line></svg>
+        </button>
+        <div class="lightbox-img-wrap">
+          <img id="lightbox-full-img" src="" alt="Enlarged campus workshop photo">
+        </div>
+        <div class="lightbox-footer">
+          <div class="lightbox-info">
+            <span style="font-family: var(--font-mono); font-size: 0.75rem; color: #38bdf8;" id="lightbox-loc"></span>
+            <h4 style="color: #fff; font-family: var(--font-display); font-size: 0.95rem;" id="lightbox-caption"></h4>
+          </div>
+          <div style="display: flex; gap: 0.5rem;">
+            <button class="lightbox-nav-btn" id="lightbox-prev" type="button" aria-label="Previous image">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="lightbox-nav-btn" id="lightbox-next" type="button" aria-label="Next image">
+              <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- ======================= ENGAGEMENT MODELS (CLAY WHITE) ======================= -->
+    <section class="section" id="engagements" aria-labelledby="engage-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">06 · Collaboration Models</span>
+          <h2 class="section-title" id="engage-heading">
+            Flexible <span class="gradient-text">Delivery Formats</span>
+          </h2>
+          <p class="section-desc">
+            Whether organizing a 2-day hands-on bootcamp, a semester STTP/FDP program, or seeking an experienced co-trainer, select the engagement that aligns with your institution.
+          </p>
+        </header>
+
+        <div class="engage-grid">
+          <!-- Card 1 -->
+          <article class="clay-card engage-card clay-card-interactive">
+            <div class="engage-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M2 3h20"/><path d="M21 3v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V3"/><path d="m10 16-2 5"/></svg>
+            </div>
+            <h3>College Workshop (1–2 Days)</h3>
+            <p>High-impact, demo-heavy ethical hacking and VAPT bootcamp designed for computer science, ISE, and cybersecurity departments.</p>
+            <div class="check-list">
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> 6 to 14 total contact hours</div>
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Live attack demos &amp; countermeasure labs</div>
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Mini-CTF contest finale</div>
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Certificate-ready student completion evaluation</div>
+            </div>
+          </article>
+
+          <!-- Card 2 -->
+          <article class="clay-card engage-card clay-card-interactive">
+            <div class="engage-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="4" rx="2"/><line x1="16" y1="2" x2="16" y2="6"/><line x1="8" y1="2" x2="8" y2="6"/><line x1="3" y1="10" x2="21" y2="10"/></svg>
+            </div>
+            <h3>Short-Term Training (STTP / FDP)</h3>
+            <p>Comprehensive multi-day or multi-week programs customized for faculty development (FDPs) or student placement upskilling tracks.</p>
+            <div class="check-list">
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Module-wise syllabus mapped to academic standards</div>
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Deep-dive into SIEM, Cloud Security &amp; Python automation</div>
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Capstone project guidance &amp; code reviews</div>
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Mock technical interviews for placement readiness</div>
+            </div>
+          </article>
+
+          <!-- Card 3 -->
+          <article class="clay-card engage-card clay-card-interactive">
+            <div class="engage-icon">
+              <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/></svg>
+            </div>
+            <h3>Trainer Assistant &amp; Co-Instructor</h3>
+            <p>Supporting corporate training companies, edtech platforms, and lead trainers for large cohorts and nationwide deployment batches.</p>
+            <div class="check-list">
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Hands-on lab moderation &amp; doubt clearing</div>
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Multi-system debugging &amp; Kali Linux VM setup</div>
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Cohort monitoring &amp; student progress tracking</div>
+              <div class="check-item"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="20 6 9 17 4 12"></polyline></svg> Reliable contractual delivery partner</div>
+            </div>
+          </article>
+        </div>
+
+        <!-- Commercial Terms Strip -->
+        <div class="terms-banner">
+          <div class="terms-grid">
+            <div class="term-block">
+              <h4>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><circle cx="12" cy="12" r="10"/><path d="m9 12 2 2 4-4"/></svg>
+                Trainer Fees
+              </h4>
+              <p>Transparent &amp; negotiable per-day or per-hour commercial rates based on workshop length, cohort size, and custom curriculum.</p>
+            </div>
+            <div class="term-block">
+              <h4>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M17.8 19.2 16 11l3.5-3.5C21 6 21.5 4 21 3c-1-.5-3 0-4.5 1.5L13 8 4.8 6.2c-.5-.1-.9.1-1.1.5l-.3.5c-.2.5-.1 1 .3 1.3L9 12l-2 3H4l-1 1 3 2 2 3 1-1v-3l3-2 3.5 5.3c.3.4.8.5 1.3.3l.5-.2c.4-.3.6-.7.5-1.2Z"/></svg>
+                Travel &amp; Stay
+              </h4>
+              <p>For on-site programs outside Mysore, standard travel (flight/train) and campus guest house or hotel stay are arranged by the host.</p>
+            </div>
+            <div class="term-block">
+              <h4>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M14.5 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V7.5L14.5 2z"/></svg>
+                Custom Syllabus
+              </h4>
+              <p>Topics can be matched 100% to your university syllabus, department electives, or placement training schedule with no extra charge.</p>
+            </div>
+            <div class="term-block">
+              <h4>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><rect width="20" height="14" x="2" y="5" rx="2"/><line x1="2" y1="10" x2="22" y2="10"/></svg>
+                Payment Milestone
+              </h4>
+              <p>50% advance to block confirmed calendar dates, remaining 50% settled upon successful completion of the training engagement.</p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ======================= FAQ ACCORDION ======================= -->
+    <section class="section" id="faq" aria-labelledby="faq-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">07 · Common Queries</span>
+          <h2 class="section-title" id="faq-heading">
+            Frequently Asked <span class="gradient-text">Questions</span>
+          </h2>
+          <p class="section-desc">
+            Everything college coordinators and vendors need to know before locking in a training session.
+          </p>
+        </header>
+
+        <div class="faq-grid">
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>What are the college lab PC requirements for the practical sessions?</span>
+              <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Standard college lab computers with Windows or Linux, at least 8 GB RAM (16 GB recommended), Virtualization enabled in BIOS (VT-x/AMD-V), and Oracle VirtualBox installed. Pre-configured Kali Linux and target vulnerability images are provided by me via pendrives before day 1.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Do students need prior programming or hacking experience?</span>
+              <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>No prior hacking knowledge is needed. Basic familiarity with computer operation and introductory networking (IP addressing, web browsers) is sufficient. Sessions start with fundamental architecture before progressing into live vulnerability exploitation.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Can the workshop syllabus be customized for our departmental requirements?</span>
+              <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Absolutely. Whether your institution wants to focus specifically on OWASP Web Penetration Testing, Cloud Security on AWS, or SOC Analyst Splunk monitoring, the syllabus is custom-tailored to your curriculum outcomes.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>Are you available for on-site travel outside Karnataka?</span>
+              <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>Yes. I frequently travel pan-India for on-campus workshops (past locations include Pune, Hyderabad, Dharwad, and Bengaluru). Travel, accommodation, and food terms are mutually agreed upon ahead of booking.</p>
+            </div>
+          </div>
+
+          <div class="faq-item">
+            <button class="faq-question" type="button" aria-expanded="false">
+              <span>How far in advance should we book dates?</span>
+              <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
+            </button>
+            <div class="faq-answer">
+              <p>It is recommended to finalize dates 2 to 4 weeks in advance, especially during peak academic symposium months (August–November and January–April), to ensure availability and proper travel planning.</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ======================= CONTACT HUB & BOOKING (CLAY WHITE) ======================= -->
+    <section class="section" id="contact" aria-labelledby="contact-heading">
+      <div class="container">
+        <header class="section-head">
+          <span class="section-kicker">08 · Direct Engagement</span>
+          <h2 class="section-title" id="contact-heading">
+            Schedule Your <span class="gradient-text">Next Session</span>
+          </h2>
+          <p class="section-desc">
+            Reach out directly via phone, WhatsApp, or email to check dates, receive a detailed syllabus proposal, or discuss commercials.
+          </p>
+        </header>
+
+        <div class="contact-grid">
+          <!-- Direct Channels -->
+          <div class="clay-card contact-card-direct clay-card-interactive">
+            <h3>Direct Contact Channels</h3>
+            <p>I typically respond within 12–24 hours on all inquiries.</p>
+
+            <div class="contact-channels">
+              <!-- WhatsApp / Phone -->
+              <a class="channel-link" href="https://wa.me/916361536991?text=Hello%20Jeevan,%20I%20would%20like%20to%20discuss%20a%20cybersecurity%20training%20workshop." target="_blank" rel="noopener">
+                <div class="channel-icon" style="background: rgba(16, 185, 129, 0.12); color: #059669;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92Z"/></svg>
+                </div>
+                <div class="channel-meta">
+                  <span class="channel-label">WhatsApp / Direct Call</span>
+                  <span class="channel-val">+91 6361536991</span>
+                </div>
+              </a>
+
+              <!-- Email -->
+              <a class="channel-link" href="mailto:jeevndeepbagade@gmail.com?subject=Cybersecurity%20Training%20Inquiry">
+                <div class="channel-icon">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="20" height="16" x="2" y="4" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                </div>
+                <div class="channel-meta">
+                  <span class="channel-label">Official Email</span>
+                  <span class="channel-val">jeevndeepbagade@gmail.com</span>
+                </div>
+              </a>
+
+              <!-- LinkedIn -->
+              <a class="channel-link" href="https://www.linkedin.com/in/jeevan-bagade" target="_blank" rel="noopener">
+                <div class="channel-icon" style="background: rgba(99, 102, 241, 0.12); color: var(--accent-purple);">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6Z"/><rect width="4" height="12" x="2" y="9"/><circle cx="4" cy="4" r="2"/></svg>
+                </div>
+                <div class="channel-meta">
+                  <span class="channel-label">LinkedIn Profile</span>
+                  <span class="channel-val">linkedin.com/in/jeevan-bagade</span>
+                </div>
+              </a>
+
+              <!-- Location -->
+              <div class="channel-link">
+                <div class="channel-icon" style="background: rgba(245, 158, 11, 0.12); color: #d97706;">
+                  <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+                </div>
+                <div class="channel-meta">
+                  <span class="channel-label">Base Location</span>
+                  <span class="channel-val">Mysore, Karnataka · Travels Pan-India</span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Interactive Inquiry Form -->
+          <div class="clay-card contact-form-panel">
+            <h3 style="font-family: var(--font-display); font-size: 1.35rem; font-weight: 800; color: var(--text-dark); margin-bottom: 1.25rem;">Send a Proposal Request</h3>
+
+            <form id="inquiry-form">
+              <div class="form-row-2">
+                <div class="form-field-group">
+                  <label class="form-label" for="form-name">Your Name *</label>
+                  <input class="form-input" id="form-name" type="text" placeholder="Dr. / Prof. / Mr. / Ms." required>
+                </div>
+                <div class="form-field-group">
+                  <label class="form-label" for="form-email">Your Email *</label>
+                  <input class="form-input" id="form-email" type="email" placeholder="name@college.edu.in" required>
+                </div>
+              </div>
+
+              <div class="form-row-2">
+                <div class="form-field-group">
+                  <label class="form-label" for="form-org">Institution / Company</label>
+                  <input class="form-input" id="form-org" type="text" placeholder="Engineering College / Academy">
+                </div>
+                <div class="form-field-group">
+                  <label class="form-label" for="form-type">Engagement Format</label>
+                  <select class="form-select" id="form-type">
+                    <option value="1-2 Days Hands-On Workshop">1–2 Days Hands-On Workshop</option>
+                    <option value="Short-Term Training Program (STTP/FDP)">Short-Term Program (STTP / FDP)</option>
+                    <option value="Trainer Assistant / Co-Trainer">Trainer Assistant / Co-Trainer</option>
+                    <option value="General Consultation / Other">General Consultation / Other</option>
+                  </select>
+                </div>
+              </div>
+
+              <div class="form-field-group">
+                <label class="form-label" for="form-msg">Workshop Requirements &amp; Preferred Dates *</label>
+                <textarea class="form-textarea" id="form-msg" rows="4" placeholder="Mention tentative dates, city, expected batch size, and topics..." required></textarea>
+              </div>
+
+              <button class="btn btn-primary btn-block btn-lg" type="submit">
+                <span>Compose Official Inquiry</span>
+                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+              <p class="form-note">Pre-formats an email to jeevndeepbagade@gmail.com. Direct communication.</p>
+            </form>
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ======================= FOOTER (CLAY WHITE) ======================= -->
+  <footer class="site-footer">
+    <div class="container">
+      <div class="footer-top">
+        <div>
+          <div class="brand" style="margin-bottom: 0.65rem;">
+            <div class="brand-badge" style="width: 32px; height: 32px;">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.3"><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/></svg>
+            </div>
+            <span class="brand-name" style="font-size: 1.05rem;">Jeevan Bagade</span>
+          </div>
+          <p class="footer-brand-bio">
+            Certified Trainer in Cybersecurity, VAPT &amp; Technology. Bridging academic curricula and industry cybersecurity tradecraft across India.
+          </p>
+        </div>
+
+        <div class="footer-col">
+          <h4>Navigation</h4>
+          <div class="footer-links">
+            <a href="#about">About &amp; Mission</a>
+            <a href="#terminal">CLI Terminal Simulator</a>
+            <a href="#skills">Curriculum Matrix</a>
+            <a href="#credentials">Degrees &amp; Credentials</a>
+            <a href="#estimator">Workshop Estimator</a>
+            <a href="#gallery">Campus Photos</a>
+          </div>
+        </div>
+
+        <div class="footer-col">
+          <h4>Contact &amp; Connect</h4>
+          <div class="footer-links">
+            <a href="mailto:jeevndeepbagade@gmail.com">jeevndeepbagade@gmail.com</a>
+            <a href="tel:+916361536991">+91 6361536991</a>
+            <a href="https://wa.me/916361536991" target="_blank" rel="noopener">WhatsApp Direct</a>
+            <a href="https://www.linkedin.com/in/jeevan-bagade" target="_blank" rel="noopener">LinkedIn Profile</a>
+            <a href="#top" style="color: var(--primary); margin-top: 0.5rem; display: flex; align-items: center; gap: 0.35rem; font-weight: 600;">
+              Back to Top ↑
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <div>
+          © <span id="copyright-year">2026</span> Jeevan Bagade. All rights reserved.
+        </div>
+        <div class="footer-ist-clock" id="ist-clock">
+          Mysore, India · IST: Loading...
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Scripts: Local Three.js + Main Interactive Engine -->
+  <script src="js/three.min.js"></script>
+  <script src="js/main.js"></script>
+</body>
+</html>

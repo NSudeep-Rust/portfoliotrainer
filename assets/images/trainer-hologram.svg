@@ -1,0 +1,90 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 600" fill="none">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="shieldGrad" x1="0" y1="0" x2="500" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#00f2fe"/>
+      <stop offset="50%" stop-color="#38bdf8"/>
+      <stop offset="100%" stop-color="#818cf8"/>
+    </linearGradient>
+    <linearGradient id="darkBg" x1="0" y1="0" x2="500" y2="600" gradientUnits="userSpaceOnUse">
+      <stop offset="0%" stop-color="#0b132b"/>
+      <stop offset="100%" stop-color="#030712"/>
+    </linearGradient>
+    <radialGradient id="cyberGlow" cx="50%" cy="40%" r="50%">
+      <stop offset="0%" stop-color="rgba(0, 242, 254, 0.25)"/>
+      <stop offset="70%" stop-color="rgba(129, 140, 248, 0.08)"/>
+      <stop offset="100%" stop-color="transparent"/>
+    </radialGradient>
+    <filter id="neonBlur" x="-20%" y="-20%" width="140%" height="140%">
+      <feGaussianBlur stdDeviation="4" result="blur"/>
+      <feComposite in="SourceGraphic" in2="blur" operator="over"/>
+    </filter>
+  </defs>
+
+  <!-- Background Base -->
+  <rect width="500" height="600" rx="28" fill="url(#darkBg)"/>
+  <rect width="498" height="598" x="1" y="1" rx="27" stroke="rgba(255, 255, 255, 0.08)" stroke-width="1.5"/>
+
+  <!-- Radial Glow Backdrop -->
+  <circle cx="250" cy="240" r="180" fill="url(#cyberGlow)"/>
+
+  <!-- Radar Grid Circles -->
+  <circle cx="250" cy="240" r="160" stroke="rgba(0, 242, 254, 0.12)" stroke-width="1" stroke-dasharray="4 6"/>
+  <circle cx="250" cy="240" r="120" stroke="rgba(56, 189, 248, 0.18)" stroke-width="1"/>
+  <circle cx="250" cy="240" r="80" stroke="rgba(129, 140, 248, 0.22)" stroke-width="1" stroke-dasharray="2 4"/>
+
+  <!-- Radar Crosshairs -->
+  <line x1="250" y1="60" x2="250" y2="420" stroke="rgba(0, 242, 254, 0.15)" stroke-width="1"/>
+  <line x1="70" y1="240" x2="430" y2="240" stroke="rgba(0, 242, 254, 0.15)" stroke-width="1"/>
+
+  <!-- Main Cyber Shield -->
+  <path d="M250 110 L370 160 V265 C370 345 320 415 250 445 C180 415 130 345 130 265 V160 L250 110 Z"
+        fill="rgba(15, 23, 42, 0.75)" stroke="url(#shieldGrad)" stroke-width="3" filter="url(#neonBlur)"/>
+
+  <!-- Inner Shield Trim -->
+  <path d="M250 135 L345 175 V255 C345 320 305 380 250 408 C195 380 155 320 155 255 V175 L250 135 Z"
+        fill="none" stroke="rgba(0, 242, 254, 0.35)" stroke-width="1.5" stroke-dasharray="6 4"/>
+
+  <!-- Stylized Monogram "JB" -->
+  <g transform="translate(250, 245)" text-anchor="middle">
+    <!-- Glow behind JB -->
+    <circle cx="0" cy="-5" r="45" fill="rgba(0, 242, 254, 0.15)"/>
+    <text y="16" font-family="'Space Grotesk', system-ui, sans-serif" font-size="64" font-weight="800" fill="#ffffff" letter-spacing="2">JB</text>
+  </g>
+
+  <!-- Cybernetic Circuit Traces -->
+  <path d="M130 200 H80 V150" stroke="#00f2fe" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="80" cy="150" r="3" fill="#00f2fe"/>
+  <path d="M370 200 H420 V150" stroke="#00f2fe" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="420" cy="150" r="3" fill="#00f2fe"/>
+
+  <path d="M160 380 L100 420 H70" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="70" cy="420" r="3" fill="#818cf8"/>
+  <path d="M340 380 L400 420 H430" stroke="#818cf8" stroke-width="1.5" stroke-linecap="round" opacity="0.6"/>
+  <circle cx="430" cy="420" r="3" fill="#818cf8"/>
+
+  <!-- Status HUD Cards at Bottom -->
+  <g transform="translate(40, 475)">
+    <!-- Card Base -->
+    <rect width="420" height="90" rx="14" fill="rgba(15, 23, 42, 0.85)" stroke="rgba(56, 189, 248, 0.3)" stroke-width="1"/>
+    
+    <!-- Status Indicator -->
+    <circle cx="28" cy="30" r="5" fill="#10b981"/>
+    <circle cx="28" cy="30" r="9" stroke="#10b981" stroke-width="1.5" opacity="0.5"/>
+    
+    <text x="46" y="34" font-family="'Space Grotesk', system-ui, sans-serif" font-size="15" font-weight="700" fill="#ffffff">Jeevan Bagade</text>
+    <text x="46" y="52" font-family="'JetBrains Mono', monospace" font-size="11" fill="#38bdf8">CYBERSECURITY &amp; VAPT TRAINER</text>
+    <text x="46" y="70" font-family="'Inter', sans-serif" font-size="11" fill="#94a3b8">MCA (MIT-WPU Pune) · Cisco Certified Ethical Hacker</text>
+
+    <!-- Base Location Tag -->
+    <rect x="300" y="22" width="100" height="24" rx="6" fill="rgba(0, 242, 254, 0.1)" stroke="rgba(0, 242, 254, 0.25)"/>
+    <text x="350" y="38" text-anchor="middle" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#00f2fe">MYSORE, KA</text>
+  </g>
+
+  <!-- Top Tactical Header Bar -->
+  <g transform="translate(40, 30)">
+    <rect width="420" height="34" rx="8" fill="rgba(255, 255, 255, 0.03)" stroke="rgba(255, 255, 255, 0.06)"/>
+    <text x="16" y="22" font-family="'JetBrains Mono', monospace" font-size="10" fill="#64748b">OFFENSIVE &amp; DEFENSIVE CYBER LABS</text>
+    <text x="360" y="22" font-family="'JetBrains Mono', monospace" font-size="10" font-weight="600" fill="#10b981">● VERIFIED</text>
+  </g>
+</svg>
