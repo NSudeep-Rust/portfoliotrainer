@@ -1183,11 +1183,12 @@
                 <textarea class="form-textarea" id="form-msg" rows="4" placeholder="Mention tentative dates, city, expected batch size, and topics..." required></textarea>
               </div>
 
-              <button class="btn btn-primary btn-block btn-lg" type="submit">
-                <span>Compose Official Inquiry</span>
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              <button class="btn btn-primary btn-block btn-lg" id="form-submit-btn" type="submit">
+                <span id="form-submit-label">Send Proposal Request</span>
+                <svg id="form-submit-icon" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               </button>
-              <p class="form-note">Pre-formats an email to jeevndeepbagade@gmail.com. Direct communication.</p>
+              <p class="form-note">Delivered directly to jeevndeepbagade@gmail.com · Direct communication.</p>
+              <div id="form-feedback-container" style="margin-top: 1rem; display: none;"></div>
             </form>
           </div>
         </div>

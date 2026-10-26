@@ -932,13 +932,17 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
   }
 
   /* ==========================================================================
-     12. INQUIRY FORM SUBMISSION HANDLER
+     12. INQUIRY FORM SUBMISSION HANDLER (DIRECT INBOX DELIVERY)
      ========================================================================== */
   function initInquiryForm() {
     const form = document.getElementById('inquiry-form');
     if (!form) return;
 
-    form.addEventListener('submit', (e) => {
+    const submitBtn = document.getElementById('form-submit-btn');
+    const submitLabel = document.getElementById('form-submit-label');
+    const feedbackBox = document.getElementById('form-feedback-container');
+
+    form.addEventListener('submit', async (e) => {
       e.preventDefault();
       playCyberSound('cmd');
 
@@ -948,23 +952,110 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
       const type = document.getElementById('form-type').value;
       const msg = document.getElementById('form-msg').value.trim();
 
-      const subject = encodeURIComponent(`Training Inquiry: ${type} - ${name} (${org})`);
-      const body = encodeURIComponent(
-        `Dear Jeevan,\n\n` +
-        `I would like to schedule a cybersecurity training engagement for our institution.\n\n` +
-        `-- CONTACT DETAILS --\n` +
-        `Name: ${name}\n` +
-        `Email: ${email}\n` +
-        `Institution/Organization: ${org}\n` +
-        `Engagement Type: ${type}\n\n` +
-        `-- REQUIREMENTS & TENTATIVE DATES --\n` +
-        `${msg}\n\n` +
-        `Looking forward to receiving your proposal and syllabus outline.\n\n` +
-        `Best regards,\n${name}`
-      );
+      if (!name || !email || !msg) return;
 
-      // Open mailto link
-      window.location.href = `mailto:jeevndeepbagade@gmail.com?subject=${subject}&body=${body}`;
+      // Loading UI State
+      if (submitBtn) {
+        submitBtn.disabled = true;
+        submitBtn.style.opacity = '0.75';
+      }
+      if (submitLabel) {
+        submitLabel.textContent = 'Sending to Jeevan...';
+      }
+      if (feedbackBox) {
+        feedbackBox.style.display = 'none';
+        feedbackBox.innerHTML = '';
+      }
+
+      const payload = {
+        name: name,
+        email: email,
+        institution: org,
+        engagement_type: type,
+        requirements_and_dates: msg,
+        _subject: `New Workshop Proposal Request: ${name} (${org})`,
+        _replyto: email,
+        _template: 'table',
+        _captcha: 'false'
+      };
+
+      try {
+        const response = await fetch('https://formsubmit.co/ajax/jeevndeepbagade@gmail.com', {
+          method: 'POST',
+          headers: {
+            'Content-Type': 'application/json',
+            'Accept': 'application/json'
+          },
+          body: JSON.stringify(payload)
+        });
+
+        const result = await response.json();
+
+        if (response.ok && (result.success === 'true' || result.success === true || result.message)) {
+          playCyberSound('click');
+          form.reset();
+
+          if (feedbackBox) {
+            feedbackBox.style.display = 'block';
+            feedbackBox.innerHTML = `
+              <div class="clay-card" style="padding: 1.5rem; text-align: center; background: #f0fdf4; border: 1.5px solid #86efac; border-radius: 18px; margin-top: 1rem;">
+                <div style="width: 46px; height: 46px; background: #22c55e; color: #fff; border-radius: 50%; display: inline-flex; align-items: center; justify-content: center; margin-bottom: 0.75rem; box-shadow: 0 8px 16px -4px rgba(34, 197, 94, 0.4);">
+                  <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="3"><polyline points="20 6 9 17 4 12"></polyline></svg>
+                </div>
+                <h4 style="font-family: var(--font-display); font-size: 1.15rem; font-weight: 700; color: #166534; margin-bottom: 0.4rem;">Inquiry Sent Successfully!</h4>
+                <p style="font-size: 0.9rem; color: #15803d; line-height: 1.5; margin-bottom: 1rem;">
+                  Thank you, <strong>${name}</strong>. Your proposal request has been delivered directly to <strong>jeevndeepbagade@gmail.com</strong>.<br>
+                  Jeevan will review your requirements and respond within 12–24 hours.
+                </p>
+                <div style="display: flex; gap: 0.5rem; justify-content: center; flex-wrap: wrap;">
+                  <a href="https://wa.me/916361536991?text=${encodeURIComponent('Hi Jeevan, I just submitted a workshop proposal request for ' + org + ' via your website.')}" target="_blank" rel="noopener" class="btn btn-sm btn-outline" style="border-color: #22c55e; color: #15803d;">
+                    Ping on WhatsApp (+91 6361536991)
+                  </a>
+                </div>
+              </div>
+            `;
+          }
+        } else {
+          throw new Error('Submission rejected by gateway');
+        }
+      } catch (err) {
+        console.warn('Background submission failed, triggering direct mailto fallback:', err);
+        // Fallback: Open mailto directly
+        const subject = encodeURIComponent(`Training Inquiry: ${type} - ${name} (${org})`);
+        const body = encodeURIComponent(
+          `Dear Jeevan,\n\n` +
+          `I would like to schedule a cybersecurity training engagement for our institution.\n\n` +
+          `Name: ${name}\n` +
+          `Email: ${email}\n` +
+          `Institution: ${org}\n` +
+          `Engagement: ${type}\n\n` +
+          `Requirements:\n${msg}\n\n` +
+          `Best regards,\n${name}`
+        );
+        window.location.href = `mailto:jeevndeepbagade@gmail.com?subject=${subject}&body=${body}`;
+
+        if (feedbackBox) {
+          feedbackBox.style.display = 'block';
+          feedbackBox.innerHTML = `
+            <div class="clay-card" style="padding: 1rem; text-align: center; background: #eff6ff; border: 1px solid #bfdbfe; border-radius: 14px; margin-top: 1rem;">
+              <p style="font-size: 0.88rem; color: #1e40af; margin-bottom: 0.5rem;">
+                Opening your email client to send to <strong>jeevndeepbagade@gmail.com</strong>...
+              </p>
+              <a href="https://wa.me/916361536991?text=${encodeURIComponent('Hi Jeevan, I would like to schedule a training for ' + org + ': ' + msg)}" target="_blank" rel="noopener" class="btn btn-sm btn-primary">
+                Or Send via WhatsApp
+              </a>
+            </div>
+          `;
+        }
+      } finally {
+        if (submitBtn) {
+          submitBtn.disabled = false;
+          submitBtn.style.opacity = '1';
+        }
+        if (submitLabel) {
+          submitLabel.textContent = 'Send Proposal Request';
+        }
+      }
     });
   }
 
