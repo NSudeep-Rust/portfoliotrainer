@@ -106,7 +106,7 @@
         <a class="nav-link" href="#skills">Curriculum</a>
         <a class="nav-link" href="#credentials">Credentials</a>
         <a class="nav-link" href="#estimator">Estimator</a>
-        <a class="nav-link" href="#gallery">Photos</a>
+        <a class="nav-link" href="#lookbook">LOOKBOOK</a>
         <a class="nav-link" href="#engagements">Models</a>
         <a class="nav-link" href="#faq">FAQ</a>
       </nav>
@@ -149,7 +149,7 @@
     <a class="mobile-nav-link" href="#skills">Curriculum &amp; Labs <span>→</span></a>
     <a class="mobile-nav-link" href="#credentials">Credentials <span>→</span></a>
     <a class="mobile-nav-link" href="#estimator">Workshop Estimator <span>→</span></a>
-    <a class="mobile-nav-link" href="#gallery">On Campus Photos <span>→</span></a>
+    <a class="mobile-nav-link" href="#lookbook">LOOKBOOK <span>→</span></a>
     <a class="mobile-nav-link" href="#engagements">Engagement Models <span>→</span></a>
     <a class="mobile-nav-link" href="#faq">FAQ <span>→</span></a>
     <a class="btn btn-primary btn-block mt-3" href="#contact">Schedule Workshop Now</a>
@@ -203,9 +203,9 @@
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><polyline points="4 17 10 11 4 5"></polyline><line x1="12" y1="19" x2="20" y2="19"></line></svg>
               <span>Try Live Terminal</span>
             </a>
-            <a class="btn btn-terminal btn-lg" href="#gallery">
+            <a class="btn btn-terminal btn-lg" href="#lookbook">
               <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><rect width="18" height="18" x="3" y="3" rx="2"/><circle cx="9" cy="9" r="2"/></svg>
-              <span>Workshop Photos</span>
+              <span>Explore Lookbook</span>
             </a>
           </div>
 
@@ -361,7 +361,7 @@
                 My educational background includes a <strong>Master of Computer Applications (MCA) from MIT World Peace University (MIT-WPU), Pune</strong> and a <strong>BCA from JSS SMI College, Dharwad</strong>. As a <strong>Certified Trainer</strong>, I bridge the gap between academic theory and offensive/defensive tradecraft.
               </p>
               <p>
-                Having delivered <strong>9+ multi-day cybersecurity workshops</strong> across Mysore, Bengaluru, Dharwad, Hubballi, Pune, and Hyderabad, I know exactly where university students struggle: moving from theoretical textbook concepts to practical, real-world exploitation and defense.
+                Having delivered <strong>multi-day hands-on cybersecurity workshops</strong> across Hubballi, Gadag-Betageri, Gangawati, Dharwad, and Mysore, I know exactly where university students struggle: moving from theoretical textbook concepts to practical, real-world exploitation and defense.
               </p>
               <p>
                 My training modules feature isolated local virtual laboratories (Kali Linux, Burp Suite, Metasploit, Wireshark, Splunk, Docker) where students attack and secure simulated web apps, networks, and cloud infrastructure with zero risk to host infrastructure.
@@ -734,7 +734,7 @@
               <label class="calc-label">4. Delivery Mode &amp; Campus Location</label>
               <div class="calc-btn-group" id="opt-location">
                 <button class="calc-choice-btn" type="button" data-val="local">Mysore (Local Campus)</button>
-                <button class="calc-choice-btn selected" type="button" data-val="state">Karnataka (Bengaluru/Hubballi/etc)</button>
+                <button class="calc-choice-btn selected" type="button" data-val="state">Karnataka (Hubballi / Gadag / Gangawati / Mysore)</button>
                 <button class="calc-choice-btn" type="button" data-val="interstate">Interstate (Pan-India Travel)</button>
               </div>
             </div>
@@ -782,111 +782,116 @@
       </div>
     </section>
 
-    <!-- ======================= CAMPUS GALLERY ======================= -->
-    <section class="section" id="gallery" aria-labelledby="gallery-heading">
+    <!-- ======================= WORKSHOP LOOKBOOK (3D CYLINDRICAL) ======================= -->
+    <span id="gallery" aria-hidden="true" style="display:block; position:relative; top:-80px; visibility:hidden;"></span>
+    <section class="section" id="lookbook" aria-labelledby="lookbook-heading">
       <div class="container">
         <header class="section-head">
-          <span class="section-kicker">05 · Campus Footprint</span>
-          <h2 class="section-title" id="gallery-heading">
-            Classrooms, Labs &amp; <span class="gradient-text">Workshops</span>
+          <span class="section-kicker">05 · ON-CAMPUS LOOKBOOK</span>
+          <h2 class="section-title" id="lookbook-heading">
+            Workshops &amp; Labs <span class="gradient-text">Lookbook</span>
           </h2>
           <p class="section-desc">
-            Visual highlights from 9+ hands-on workshops conducted across leading colleges, training vendor cohorts, and academic partner institutions.
+            Authentic photographic documentation from real hands-on cybersecurity workshops conducted across Karnataka cohorts: Hubballi, Gadag-Betageri, Gangawati &amp; Mysore.
           </p>
         </header>
 
-        <!-- Gallery Filters -->
-        <div class="gallery-filter-bar">
-          <button class="filter-btn active" type="button" data-gallery-filter="all">All Captures</button>
-          <button class="filter-btn" type="button" data-gallery-filter="mysore">Mysore</button>
-          <button class="filter-btn" type="button" data-gallery-filter="bengaluru">Bengaluru</button>
-          <button class="filter-btn" type="button" data-gallery-filter="pune">Pune</button>
-          <button class="filter-btn" type="button" data-gallery-filter="dharwad">Dharwad / Hubballi</button>
-          <button class="filter-btn" type="button" data-gallery-filter="hyderabad">Hyderabad</button>
+        <!-- Real City Filter Tabs with Verified Photo Counts -->
+        <div class="lookbook-city-tabs" id="lookbook-city-tabs" role="tablist">
+          <button class="lookbook-tab active" type="button" data-city="hubballi" role="tab" aria-selected="true">
+            <span class="tab-indicator">●</span> Hubballi <span class="tab-badge">11 Photos</span>
+          </button>
+          <button class="lookbook-tab" type="button" data-city="gadag" role="tab" aria-selected="false">
+            <span class="tab-indicator">●</span> Gadag-Betageri <span class="tab-badge">5 Photos</span>
+          </button>
+          <button class="lookbook-tab" type="button" data-city="gangawati" role="tab" aria-selected="false">
+            <span class="tab-indicator">●</span> Gangawati <span class="tab-badge">2 Photos</span>
+          </button>
+          <button class="lookbook-tab" type="button" data-city="mysore" role="tab" aria-selected="false">
+            <span class="tab-indicator">●</span> Mysore <span class="tab-badge">4 Photos</span>
+          </button>
+          <button class="lookbook-tab" type="button" data-city="all" role="tab" aria-selected="false">
+            <span class="tab-indicator">●</span> All Cohorts <span class="tab-badge">22 Photos</span>
+          </button>
         </div>
 
-        <!-- Gallery Cards -->
-        <div class="gallery-grid" id="gallery-container">
+        <!-- Dynamic City Header & Status HUD -->
+        <div class="lookbook-hud clay-card" id="lookbook-hud">
+          <div class="hud-left">
+            <div class="hud-city-badge">
+              <svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <strong id="lb-hud-city">Hubballi, Karnataka</strong>
+            </div>
+            <span class="hud-meta" id="lb-hud-meta">Sept &amp; Oct 2026 · Hands-On VAPT &amp; Threat Defense Labs</span>
+          </div>
 
-          <!-- Photo 1 -->
-          <div class="gallery-card clay-card" data-gallery-cat="mysore" data-src="assets/images/training-01.jpg" data-caption="Hands-On Ethical Hacking Lab Session" data-loc="Mysore, Karnataka" data-date="Jan 2026">
-            <img class="gallery-img" src="assets/images/training-01.jpg" alt="Hands-on ethical hacking workshop in computer lab" loading="lazy">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                Mysore, Karnataka
-              </span>
-              <h3 class="gallery-caption">Hands-On Ethical Hacking Lab</h3>
-              <span class="gallery-date">Jan 2026 · 60 Students</span>
+          <div class="hud-center">
+            <div class="cylinder-indicator-dots" id="cylinder-dots">
+              <!-- Dynamically populated card indicator dots -->
             </div>
           </div>
 
-          <!-- Photo 2 -->
-          <div class="gallery-card clay-card" data-gallery-cat="bengaluru" data-src="assets/images/training-02.jpg" data-caption="Cybersecurity Fundamentals & VAPT Keynote" data-loc="Bengaluru, Karnataka" data-date="Nov 2025">
-            <img class="gallery-img" src="assets/images/training-02.jpg" alt="Students attending cybersecurity seminar in auditorium" loading="lazy">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                Bengaluru, Karnataka
-              </span>
-              <h3 class="gallery-caption">VAPT Keynote &amp; Live Attack Demo</h3>
-              <span class="gallery-date">Nov 2025 · 120 Attendees</span>
-            </div>
+          <div class="hud-right">
+            <span class="hud-control-tip">
+              <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M7 16l-4-4m0 0l4-4m-4 4h18"/><path d="M17 8l4 4m0 0l-4 4m4-4H3"/></svg>
+              Scroll / Drag Cylinder ↻
+            </span>
+            <span class="hud-counter" id="lb-counter">Photo 1 of 11</span>
           </div>
-
-          <!-- Photo 3 -->
-          <div class="gallery-card clay-card" data-gallery-cat="dharwad" data-src="assets/images/training-03.jpg" data-caption="Kali Linux & Network Defense Workshop" data-loc="Dharwad, Karnataka" data-date="Sep 2025">
-            <img class="gallery-img" src="assets/images/training-03.jpg" alt="Trainer demonstrating network security tools on projector" loading="lazy">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                Dharwad, Karnataka
-              </span>
-              <h3 class="gallery-caption">Kali Linux &amp; Network Defense</h3>
-              <span class="gallery-date">Sep 2025 · 75 Students</span>
-            </div>
-          </div>
-
-          <!-- Photo 4 -->
-          <div class="gallery-card clay-card" data-gallery-cat="pune" data-src="assets/images/training-04.jpg" data-caption="Cloud Security & AWS Architecture Session" data-loc="Pune, Maharashtra" data-date="Jul 2025">
-            <img class="gallery-img" src="assets/images/training-04.jpg" alt="Cloud security and AWS workshop with engineering students" loading="lazy">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                Pune, Maharashtra
-              </span>
-              <h3 class="gallery-caption">Cloud Security &amp; AWS Hardening</h3>
-              <span class="gallery-date">Jul 2025 · 90 Engineering Students</span>
-            </div>
-          </div>
-
-          <!-- Photo 5 -->
-          <div class="gallery-card clay-card" data-gallery-cat="dharwad" data-src="assets/images/training-05.jpg" data-caption="SOC Operations & Splunk SIEM Demonstration" data-loc="Hubballi, Karnataka" data-date="Apr 2025">
-            <img class="gallery-img" src="assets/images/training-05.jpg" alt="VAPT demonstration session with SOC tools on projector" loading="lazy">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                Hubballi, Karnataka
-              </span>
-              <h3 class="gallery-caption">SOC &amp; SIEM Threat Hunting</h3>
-              <span class="gallery-date">Apr 2025 · 65 Participants</span>
-            </div>
-          </div>
-
-          <!-- Photo 6 -->
-          <div class="gallery-card clay-card" data-gallery-cat="hyderabad" data-src="assets/images/training-06.jpg" data-caption="AI-Driven Cyber Defenses & Awareness" data-loc="Hyderabad, Telangana" data-date="Feb 2025">
-            <img class="gallery-img" src="assets/images/training-06.jpg" alt="AI and cybersecurity workshop group discussion" loading="lazy">
-            <div class="gallery-overlay">
-              <span class="gallery-tag">
-                <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
-                Hyderabad, Telangana
-              </span>
-              <h3 class="gallery-caption">AI &amp; Machine Learning in Cyber</h3>
-              <span class="gallery-date">Feb 2025 · 85 Students</span>
-            </div>
-          </div>
-
         </div>
+
+        <!-- 3D Cylindrical Viewport -->
+        <div class="lookbook-cylinder-viewport" id="lookbook-viewport">
+          <!-- Left Navigation Arrow -->
+          <button class="cylinder-arrow-btn prev-arrow" id="cylinder-prev" type="button" aria-label="Previous photo in lookbook">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="15 18 9 12 15 6"></polyline></svg>
+          </button>
+
+          <!-- 3D Cylindrical Stage -->
+          <div class="lookbook-cylinder-stage" id="lookbook-stage">
+            <!-- 3D cylinder cards generated dynamically via JS engine -->
+          </div>
+
+          <!-- Right Navigation Arrow -->
+          <button class="cylinder-arrow-btn next-arrow" id="cylinder-next" type="button" aria-label="Next photo in lookbook">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="9 18 15 12 9 6"></polyline></svg>
+          </button>
+        </div>
+
+        <!-- City Sequence Pipeline Bar (Auto transition flow) -->
+        <div class="lookbook-pipeline">
+          <div class="pipeline-track">
+            <button class="pipeline-step active" type="button" data-pipeline-city="hubballi">
+              <span class="step-num">01</span>
+              <span class="step-name">Hubballi (11)</span>
+            </button>
+            <div class="pipeline-connector">
+              <svg width="18" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M0 6h20M15 1l5 5-5 5"/></svg>
+            </div>
+            <button class="pipeline-step" type="button" data-pipeline-city="gadag">
+              <span class="step-num">02</span>
+              <span class="step-name">Gadag-Betageri (5)</span>
+            </button>
+            <div class="pipeline-connector">
+              <svg width="18" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M0 6h20M15 1l5 5-5 5"/></svg>
+            </div>
+            <button class="pipeline-step" type="button" data-pipeline-city="gangawati">
+              <span class="step-num">03</span>
+              <span class="step-name">Gangawati (2)</span>
+            </button>
+            <div class="pipeline-connector">
+              <svg width="18" height="12" viewBox="0 0 24 12" fill="none" stroke="currentColor" stroke-width="2"><path d="M0 6h20M15 1l5 5-5 5"/></svg>
+            </div>
+            <button class="pipeline-step" type="button" data-pipeline-city="mysore">
+              <span class="step-num">04</span>
+              <span class="step-name">Mysore (4)</span>
+            </button>
+          </div>
+          <p class="pipeline-hint">
+            ↻ Continuous Cylindrical Roll: Scroll or use arrows — when one city completes, it transitions smoothly to the next city cohort.
+          </p>
+        </div>
+
       </div>
     </section>
 
@@ -1063,7 +1068,7 @@
               <svg class="faq-icon-arrow" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><polyline points="6 9 12 15 18 9"></polyline></svg>
             </button>
             <div class="faq-answer">
-              <p>Yes. I frequently travel pan-India for on-campus workshops (past locations include Pune, Hyderabad, Dharwad, and Bengaluru). Travel, accommodation, and food terms are mutually agreed upon ahead of booking.</p>
+              <p>Yes. I frequently travel for on-campus workshops (key locations include Hubballi, Gadag-Betageri, Gangawati, Dharwad, and Mysore). Travel, accommodation, and food terms are mutually agreed upon ahead of booking.</p>
             </div>
           </div>
 
@@ -1221,7 +1226,7 @@
             <a href="#skills">Curriculum Matrix</a>
             <a href="#credentials">Degrees &amp; Credentials</a>
             <a href="#estimator">Workshop Estimator</a>
-            <a href="#gallery">Campus Photos</a>
+            <a href="#lookbook">Workshop Lookbook</a>
           </div>
         </div>
 

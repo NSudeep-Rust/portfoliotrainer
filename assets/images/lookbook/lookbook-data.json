@@ -1,0 +1,222 @@
+[
+  {
+    "src": "IMG-20260905-WA0042.jpg.jpeg",
+    "id": "hubballi-01",
+    "city": "Hubballi",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "Hands-On Lab Session",
+    "desc": "Practical command-line networking & security fundamentals in dedicated campus computer lab.",
+    "web_path": "assets/images/lookbook/hubballi-01.jpg"
+  },
+  {
+    "src": "IMG-20260905-WA0044.jpg.jpeg",
+    "id": "hubballi-02",
+    "city": "Hubballi",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "Lab Architecture & Setup",
+    "desc": "Assisting student workstations with Kali Linux and toolchain configurations.",
+    "web_path": "assets/images/lookbook/hubballi-02.jpg"
+  },
+  {
+    "src": "IMG-20260905-WA0048.jpg.jpeg",
+    "id": "hubballi-03",
+    "city": "Hubballi",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "Network Scanning & Analysis",
+    "desc": "Live packet interception and Wireshark / Nmap scanning exercises.",
+    "web_path": "assets/images/lookbook/hubballi-03.jpg"
+  },
+  {
+    "src": "IMG-20260905-WA0054.jpg.jpeg",
+    "id": "hubballi-04",
+    "city": "Hubballi",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "Interactive Defense Keynote",
+    "desc": "Explaining cyber threat vectors and defensive countermeasures to student cohort.",
+    "web_path": "assets/images/lookbook/hubballi-04.jpg"
+  },
+  {
+    "src": "IMG-20260905-WA0057.jpg.jpeg",
+    "id": "hubballi-05",
+    "city": "Hubballi",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "One-on-One Lab Mentoring",
+    "desc": "Guiding students through vulnerability assessment lab challenges.",
+    "web_path": "assets/images/lookbook/hubballi-05.jpg"
+  },
+  {
+    "src": "IMG-20260905-WA0058.jpg.jpeg",
+    "id": "hubballi-06",
+    "city": "Hubballi",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "Logic & Functions Deep-Dive",
+    "desc": "Interactive projection walkthrough of automated security scripting.",
+    "web_path": "assets/images/lookbook/hubballi-06.jpg"
+  },
+  {
+    "src": "IMG-20260909-WA0018.jpg.jpeg",
+    "id": "hubballi-07",
+    "city": "Hubballi",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "Student Q&A & Discussion",
+    "desc": "Engaging technical discussion on modern cybersecurity careers and certifications.",
+    "web_path": "assets/images/lookbook/hubballi-07.jpg"
+  },
+  {
+    "src": "IMG-20261012-WA0008.jpg.jpeg",
+    "id": "hubballi-08",
+    "city": "Hubballi",
+    "state": "Karnataka",
+    "date": "Oct 2026",
+    "title": "Advanced Defense Boot Camp",
+    "desc": "Full computer lab cohort executing multi-system attack and defense scenarios.",
+    "web_path": "assets/images/lookbook/hubballi-08.jpg"
+  },
+  {
+    "src": "IMG-20261012-WA0029.jpg.jpeg",
+    "id": "hubballi-09",
+    "city": "Hubballi",
+    "state": "Karnataka",
+    "date": "Oct 2026",
+    "title": "Threat Hunting Demonstration",
+    "desc": "Live log analysis and anomaly detection demonstrated on student terminals.",
+    "web_path": "assets/images/lookbook/hubballi-09.jpg"
+  },
+  {
+    "src": "IMG-20261012-WA0031.jpg.jpeg",
+    "id": "hubballi-10",
+    "city": "Hubballi",
+    "state": "Karnataka",
+    "date": "Oct 2026",
+    "title": "Hands-On Practical Drills",
+    "desc": "Supervised technical hands-on lab with dual-monitor instructor station.",
+    "web_path": "assets/images/lookbook/hubballi-10.jpg"
+  },
+  {
+    "src": "IMG-20261012-WA0037.jpg.jpeg",
+    "id": "hubballi-11",
+    "city": "Hubballi",
+    "state": "Karnataka",
+    "date": "Oct 2026",
+    "title": "Penetration Testing Lab",
+    "desc": "Coordinating complex multi-stage vulnerability verification drills.",
+    "web_path": "assets/images/lookbook/hubballi-11.jpg"
+  },
+  {
+    "src": "IMG-20260916-WA0012.jpg.jpeg",
+    "id": "gadag-01",
+    "city": "Gadag-Betageri",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "Python & Security Automation",
+    "desc": "Fundamental scripting algorithms for security telemetry and tools.",
+    "web_path": "assets/images/lookbook/gadag-01.jpg"
+  },
+  {
+    "src": "IMG-20260917-WA0013.jpg.jpeg",
+    "id": "gadag-02",
+    "city": "Gadag-Betageri",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "Machine Learning Fundamentals",
+    "desc": "Data preprocessing and model training for anomaly detection in cyber.",
+    "web_path": "assets/images/lookbook/gadag-02.jpg"
+  },
+  {
+    "src": "IMG-20260919-WA0008.jpg.jpeg",
+    "id": "gadag-03",
+    "city": "Gadag-Betageri",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "Interactive Lab Facilitation",
+    "desc": "Walkthrough of defensive programming patterns and vulnerability mitigation.",
+    "web_path": "assets/images/lookbook/gadag-03.jpg"
+  },
+  {
+    "src": "IMG-20260922-WA0008.jpg.jpeg",
+    "id": "gadag-04",
+    "city": "Gadag-Betageri",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "Decision Trees & Applied AI",
+    "desc": "Mathematical concepts simplified for practical software and cybersecurity analysis.",
+    "web_path": "assets/images/lookbook/gadag-04.jpg"
+  },
+  {
+    "src": "IMG-20260925-WA0014.jpg.jpeg",
+    "id": "gadag-05",
+    "city": "Gadag-Betageri",
+    "state": "Karnataka",
+    "date": "Sep 2026",
+    "title": "Capstone Workshop & Review",
+    "desc": "Reviewing student implementations and verifying lab results.",
+    "web_path": "assets/images/lookbook/gadag-05.jpg"
+  },
+  {
+    "src": "IMG-20261007-WA0011.jpg.jpeg",
+    "id": "gangawati-01",
+    "city": "Gangawati",
+    "state": "Karnataka",
+    "date": "Oct 2026",
+    "title": "Applied AI & Computer Vision",
+    "desc": "Seminar on OpenCV, real-time image processing, and intelligent algorithms.",
+    "web_path": "assets/images/lookbook/gangawati-01.jpg"
+  },
+  {
+    "src": "IMG-20261007-WA0019.jpg.jpeg",
+    "id": "gangawati-02",
+    "city": "Gangawati",
+    "state": "Karnataka",
+    "date": "Oct 2026",
+    "title": "AI Technology Lecture",
+    "desc": "Interactive keynote addressing students on future AI and cybersecurity convergence.",
+    "web_path": "assets/images/lookbook/gangawati-02.jpg"
+  },
+  {
+    "src": "IMG-20261024-WA0005.jpg.jpeg",
+    "id": "mysore-01",
+    "city": "Mysore",
+    "state": "Karnataka",
+    "date": "Oct 2026",
+    "title": "Full-Cohort Keynote Session",
+    "desc": "Lecture on triggers, node automation, and modern web infrastructure.",
+    "web_path": "assets/images/lookbook/mysore-01.jpg"
+  },
+  {
+    "src": "IMG-20261024-WA0012.jpg.jpeg",
+    "id": "mysore-02",
+    "city": "Mysore",
+    "state": "Karnataka",
+    "date": "Oct 2026",
+    "title": "Interactive Lab Mentorship",
+    "desc": "Engaging computer lab cohort with practical hands-on problem solving.",
+    "web_path": "assets/images/lookbook/mysore-02.jpg"
+  },
+  {
+    "src": "IMG-20261024-WA0013.jpg.jpeg",
+    "id": "mysore-03",
+    "city": "Mysore",
+    "state": "Karnataka",
+    "date": "Oct 2026",
+    "title": "Auditorium Technology Keynote",
+    "desc": "Addressing a full auditorium of engineering students on industry cybersecurity requirements.",
+    "web_path": "assets/images/lookbook/mysore-03.jpg"
+  },
+  {
+    "src": "IMG-20261024-WA0014.jpg.jpeg",
+    "id": "mysore-04",
+    "city": "Mysore",
+    "state": "Karnataka",
+    "date": "Oct 2026",
+    "title": "Ethical Hacking: Digital Investigation",
+    "desc": "Comprehensive workshop on digital forensics, ethical hacking tradecraft, and threat investigation.",
+    "web_path": "assets/images/lookbook/mysore-04.jpg"
+  }
+]

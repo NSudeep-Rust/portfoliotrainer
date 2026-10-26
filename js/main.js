@@ -799,107 +799,704 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
   }
 
   /* ==========================================================================
-     10. CAMPUS PHOTO GALLERY & GLASS LIGHTBOX MODAL
+     10. 3D CYLINDRICAL LOOKBOOK ENGINE & GLASS LIGHTBOX MODAL
+     Authentic Workshop Photographic Documentation from Real Karnataka Cohorts:
+     Hubballi, Gadag-Betageri, Gangawati & Mysore.
      ========================================================================== */
-  function initCampusGallery() {
-    const galleryCards = document.querySelectorAll('#gallery-container .gallery-card');
-    const filterBtns = document.querySelectorAll('[data-gallery-filter]');
+  const LOOKBOOK_PHOTOS = [
+    // HUBBALLI (11 photos)
+    {
+      id: "hubballi-01",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "Hands-On Lab Session",
+      desc: "Practical command-line networking & security fundamentals in dedicated campus computer lab.",
+      src: "assets/images/lookbook/hubballi-01.jpg"
+    },
+    {
+      id: "hubballi-02",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "Lab Architecture & Setup",
+      desc: "Assisting student workstations with Kali Linux and toolchain configurations.",
+      src: "assets/images/lookbook/hubballi-02.jpg"
+    },
+    {
+      id: "hubballi-03",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "Network Scanning & Analysis",
+      desc: "Live packet interception and Wireshark / Nmap scanning exercises.",
+      src: "assets/images/lookbook/hubballi-03.jpg"
+    },
+    {
+      id: "hubballi-04",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "Interactive Defense Keynote",
+      desc: "Explaining cyber threat vectors and defensive countermeasures to student cohort.",
+      src: "assets/images/lookbook/hubballi-04.jpg"
+    },
+    {
+      id: "hubballi-05",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "One-on-One Lab Mentoring",
+      desc: "Guiding students through vulnerability assessment lab challenges.",
+      src: "assets/images/lookbook/hubballi-05.jpg"
+    },
+    {
+      id: "hubballi-06",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "Logic & Functions Deep-Dive",
+      desc: "Interactive projection walkthrough of automated security scripting.",
+      src: "assets/images/lookbook/hubballi-06.jpg"
+    },
+    {
+      id: "hubballi-07",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "Student Q&A & Discussion",
+      desc: "Engaging technical discussion on modern cybersecurity careers and certifications.",
+      src: "assets/images/lookbook/hubballi-07.jpg"
+    },
+    {
+      id: "hubballi-08",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Advanced Defense Boot Camp",
+      desc: "Full computer lab cohort executing multi-system attack and defense scenarios.",
+      src: "assets/images/lookbook/hubballi-08.jpg"
+    },
+    {
+      id: "hubballi-09",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Threat Hunting Demonstration",
+      desc: "Live log analysis and anomaly detection demonstrated on student terminals.",
+      src: "assets/images/lookbook/hubballi-09.jpg"
+    },
+    {
+      id: "hubballi-10",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Hands-On Practical Drills",
+      desc: "Supervised technical hands-on lab with dual-monitor instructor station.",
+      src: "assets/images/lookbook/hubballi-10.jpg"
+    },
+    {
+      id: "hubballi-11",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Penetration Testing Lab",
+      desc: "Coordinating complex multi-stage vulnerability verification drills.",
+      src: "assets/images/lookbook/hubballi-11.jpg"
+    },
+
+    // GADAG-BETAGERI (5 photos)
+    {
+      id: "gadag-01",
+      cityKey: "gadag",
+      city: "Gadag-Betageri",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "Python & Security Automation",
+      desc: "Fundamental scripting algorithms for security telemetry and tools.",
+      src: "assets/images/lookbook/gadag-01.jpg"
+    },
+    {
+      id: "gadag-02",
+      cityKey: "gadag",
+      city: "Gadag-Betageri",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "Machine Learning Fundamentals",
+      desc: "Data preprocessing and model training for anomaly detection in cyber.",
+      src: "assets/images/lookbook/gadag-02.jpg"
+    },
+    {
+      id: "gadag-03",
+      cityKey: "gadag",
+      city: "Gadag-Betageri",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "Interactive Lab Facilitation",
+      desc: "Walkthrough of defensive programming patterns and vulnerability mitigation.",
+      src: "assets/images/lookbook/gadag-03.jpg"
+    },
+    {
+      id: "gadag-04",
+      cityKey: "gadag",
+      city: "Gadag-Betageri",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "Decision Trees & Applied AI",
+      desc: "Mathematical concepts simplified for practical software and cybersecurity analysis.",
+      src: "assets/images/lookbook/gadag-04.jpg"
+    },
+    {
+      id: "gadag-05",
+      cityKey: "gadag",
+      city: "Gadag-Betageri",
+      state: "Karnataka",
+      date: "Sep 2026",
+      title: "Capstone Workshop & Review",
+      desc: "Reviewing student implementations and verifying lab results.",
+      src: "assets/images/lookbook/gadag-05.jpg"
+    },
+
+    // GANGAWATI (2 photos)
+    {
+      id: "gangawati-01",
+      cityKey: "gangawati",
+      city: "Gangawati",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Applied AI & Computer Vision",
+      desc: "Seminar on OpenCV, real-time image processing, and intelligent algorithms.",
+      src: "assets/images/lookbook/gangawati-01.jpg"
+    },
+    {
+      id: "gangawati-02",
+      cityKey: "gangawati",
+      city: "Gangawati",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "AI Technology Lecture",
+      desc: "Interactive keynote addressing students on future AI and cybersecurity convergence.",
+      src: "assets/images/lookbook/gangawati-02.jpg"
+    },
+
+    // MYSORE (4 photos)
+    {
+      id: "mysore-01",
+      cityKey: "mysore",
+      city: "Mysore",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Full-Cohort Keynote Session",
+      desc: "Lecture on triggers, node automation, and modern web infrastructure.",
+      src: "assets/images/lookbook/mysore-01.jpg"
+    },
+    {
+      id: "mysore-02",
+      cityKey: "mysore",
+      city: "Mysore",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Interactive Lab Mentorship",
+      desc: "Engaging computer lab cohort with practical hands-on problem solving.",
+      src: "assets/images/lookbook/mysore-02.jpg"
+    },
+    {
+      id: "mysore-03",
+      cityKey: "mysore",
+      city: "Mysore",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Auditorium Technology Keynote",
+      desc: "Addressing a full auditorium of engineering students on industry cybersecurity requirements.",
+      src: "assets/images/lookbook/mysore-03.jpg"
+    },
+    {
+      id: "mysore-04",
+      cityKey: "mysore",
+      city: "Mysore",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Ethical Hacking: Digital Investigation",
+      desc: "Comprehensive workshop on digital forensics, ethical hacking tradecraft, and threat investigation.",
+      src: "assets/images/lookbook/mysore-04.jpg"
+    }
+  ];
+
+  const CITY_ORDER = ['hubballi', 'gadag', 'gangawati', 'mysore'];
+
+  const CITY_INFO = {
+    'hubballi': {
+      title: 'Hubballi, Karnataka',
+      meta: 'Sept & Oct 2026 · Hands-On VAPT & Threat Defense Labs',
+      count: 11
+    },
+    'gadag': {
+      title: 'Gadag-Betageri, Karnataka',
+      meta: 'Sept 2026 · Python Automation & Applied AI Security Labs',
+      count: 5
+    },
+    'gangawati': {
+      title: 'Gangawati, Karnataka',
+      meta: 'Oct 2026 · Applied AI & Computer Vision Keynotes',
+      count: 2
+    },
+    'mysore': {
+      title: 'Mysore, Karnataka',
+      meta: 'Oct 2026 · Full-Cohort Keynotes & Ethical Hacking Drills',
+      count: 4
+    },
+    'all': {
+      title: 'All Karnataka Cohorts',
+      meta: 'Hubballi · Gadag-Betageri · Gangawati · Mysore (22 Total Photos)',
+      count: 22
+    }
+  };
+
+  function initLookbookCylinder() {
+    const viewport = document.getElementById('lookbook-viewport');
+    const stage = document.getElementById('lookbook-stage');
+    if (!viewport || !stage) return;
+
+    const cityTabs = document.querySelectorAll('.lookbook-tab');
+    const pipelineSteps = document.querySelectorAll('.pipeline-step');
+    const prevBtn = document.getElementById('cylinder-prev');
+    const nextBtn = document.getElementById('cylinder-next');
+    const dotsContainer = document.getElementById('cylinder-dots');
+    const hudCity = document.getElementById('lb-hud-city');
+    const hudMeta = document.getElementById('lb-hud-meta');
+    const counterEl = document.getElementById('lb-counter');
+
+    // Lightbox modal elements
     const modal = document.getElementById('lightbox-modal');
     const modalImg = document.getElementById('lightbox-full-img');
     const modalLoc = document.getElementById('lightbox-loc');
     const modalCap = document.getElementById('lightbox-caption');
-    const closeBtn = document.getElementById('lightbox-close');
-    const prevBtn = document.getElementById('lightbox-prev');
-    const nextBtn = document.getElementById('lightbox-next');
+    const modalClose = document.getElementById('lightbox-close');
+    const lbModalPrev = document.getElementById('lightbox-prev');
+    const lbModalNext = document.getElementById('lightbox-next');
 
-    state.galleryItems = Array.from(galleryCards).map((card) => ({
-      src: card.dataset.src,
-      caption: card.dataset.caption,
-      loc: card.dataset.loc,
-      date: card.dataset.date,
-      cat: card.dataset.galleryCat
-    }));
+    let currentCity = 'hubballi';
+    let currentIndex = 0;
+    let currentPhotos = LOOKBOOK_PHOTOS.filter((p) => p.cityKey === currentCity);
+    let isTransitioning = false;
+    let modalPhotoIndex = 0;
 
-    function showImage(index) {
-      if (!modal || index < 0 || index >= state.galleryItems.length) return;
-      state.currentGalleryIndex = index;
-      const item = state.galleryItems[index];
-
-      modalImg.src = item.src;
-      modalImg.alt = item.caption;
-      modalLoc.textContent = `${item.loc} · ${item.date}`;
-      modalCap.textContent = item.caption;
+    function getCylinderDimensions() {
+      const width = window.innerWidth;
+      if (width < 480) {
+        return { radius: 300, stepAngle: 36 };
+      } else if (width < 768) {
+        return { radius: 380, stepAngle: 32 };
+      } else if (width < 1024) {
+        return { radius: 480, stepAngle: 30 };
+      } else {
+        return { radius: 560, stepAngle: 28 };
+      }
     }
 
-    function openModal(index) {
+    function renderStageCards() {
+      stage.innerHTML = '';
+      currentPhotos.forEach((photo, idx) => {
+        const card = document.createElement('div');
+        card.className = 'cylinder-card';
+        card.dataset.index = idx;
+        card.dataset.photoId = photo.id;
+        card.setAttribute('role', 'button');
+        card.setAttribute('tabindex', '0');
+        card.setAttribute('aria-label', `${photo.title} - ${photo.city}`);
+
+        card.innerHTML = `
+          <img class="cylinder-card-img" src="${photo.src}" alt="${photo.title} - ${photo.city}" loading="lazy">
+          <div class="cylinder-card-overlay">
+            <div class="cylinder-card-tag">
+              <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5"><path d="M20 10c0 4.99-5.54 10.19-7.4 11.8a1 1 0 0 1-1.2 0C9.54 20.19 4 14.99 4 10a8 8 0 0 1 16 0Z"/><circle cx="12" cy="10" r="3"/></svg>
+              <span>${photo.city}</span>
+            </div>
+            <h3 class="cylinder-card-title">${photo.title}</h3>
+            <p class="cylinder-card-desc">${photo.desc}</p>
+            <span class="cylinder-card-date">${photo.date} · Real Workshop Drills</span>
+          </div>
+        `;
+
+        card.addEventListener('click', () => {
+          if (idx === currentIndex) {
+            openLightbox(idx);
+          } else {
+            playCyberSound('click');
+            currentIndex = idx;
+            updateCardTransforms();
+          }
+        });
+
+        card.addEventListener('keydown', (e) => {
+          if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            if (idx === currentIndex) {
+              openLightbox(idx);
+            } else {
+              currentIndex = idx;
+              updateCardTransforms();
+            }
+          }
+        });
+
+        stage.appendChild(card);
+      });
+    }
+
+    function buildDots() {
+      if (!dotsContainer) return;
+      dotsContainer.innerHTML = '';
+      currentPhotos.forEach((_, idx) => {
+        const dot = document.createElement('button');
+        dot.type = 'button';
+        dot.className = `cyl-dot ${idx === currentIndex ? 'active' : ''}`;
+        dot.setAttribute('aria-label', `Go to photo ${idx + 1}`);
+        dot.addEventListener('click', () => {
+          playCyberSound('click');
+          currentIndex = idx;
+          updateCardTransforms();
+        });
+        dotsContainer.appendChild(dot);
+      });
+    }
+
+    function updateCardTransforms() {
+      const cards = stage.querySelectorAll('.cylinder-card');
+      const dims = getCylinderDimensions();
+      const radius = dims.radius;
+      const stepAngle = dims.stepAngle;
+
+      cards.forEach((card, idx) => {
+        const rel = idx - currentIndex;
+        const angle = rel * stepAngle;
+        const absAngle = Math.abs(angle);
+
+        if (absAngle > 95) {
+          card.style.opacity = '0';
+          card.style.visibility = 'hidden';
+          card.style.pointerEvents = 'none';
+          card.style.transform = `rotateY(${angle > 0 ? 95 : -95}deg) translateZ(${radius}px) scale(0.6)`;
+          card.classList.remove('active');
+        } else {
+          card.style.visibility = 'visible';
+          card.style.pointerEvents = 'auto';
+
+          let scale = 1.0;
+          let opacity = 1.0;
+          let zIndex = 25 - Math.abs(rel);
+          let filter = 'none';
+
+          if (rel === 0) {
+            scale = 1.05;
+            opacity = 1.0;
+            zIndex = 35;
+            filter = 'drop-shadow(0 20px 35px rgba(2, 132, 199, 0.25))';
+            card.classList.add('active');
+          } else {
+            card.classList.remove('active');
+            scale = Math.max(0.72, 1 - absAngle / 280);
+            opacity = Math.max(0.2, 1 - absAngle / 85);
+            const blurAmount = Math.min(3, absAngle / 25);
+            const brightness = Math.max(0.65, 1 - absAngle / 180);
+            filter = `blur(${blurAmount.toFixed(1)}px) brightness(${brightness.toFixed(2)})`;
+          }
+
+          card.style.zIndex = zIndex;
+          card.style.opacity = opacity.toFixed(2);
+          card.style.filter = filter;
+          card.style.transform = `rotateY(${angle}deg) translateZ(${radius}px) scale(${scale.toFixed(3)})`;
+        }
+      });
+
+      // Update counter
+      if (counterEl && currentPhotos.length > 0) {
+        counterEl.textContent = `Photo ${currentIndex + 1} of ${currentPhotos.length}`;
+      }
+
+      // Update dots
+      if (dotsContainer) {
+        const dots = dotsContainer.querySelectorAll('.cyl-dot');
+        dots.forEach((dot, idx) => {
+          dot.classList.toggle('active', idx === currentIndex);
+        });
+      }
+    }
+
+    function switchCity(newCity, targetIndex = 0) {
+      if (isTransitioning) return;
+      isTransitioning = true;
+      currentCity = newCity;
+
+      // Animate stage exit
+      stage.style.transition = 'opacity 0.2s ease, transform 0.2s ease';
+      stage.style.opacity = '0.15';
+      const dims = getCylinderDimensions();
+      stage.style.transform = `translateZ(-${dims.radius * 0.75}px) scale(0.92)`;
+
+      // Update tabs
+      cityTabs.forEach((tab) => {
+        const isAct = tab.dataset.city === newCity;
+        tab.classList.toggle('active', isAct);
+        tab.setAttribute('aria-selected', isAct ? 'true' : 'false');
+      });
+
+      // Update pipeline steps
+      pipelineSteps.forEach((step) => {
+        step.classList.toggle('active', step.dataset.pipelineCity === newCity);
+      });
+
+      // Update HUD info
+      const info = CITY_INFO[newCity] || CITY_INFO['all'];
+      if (hudCity) hudCity.textContent = info.title;
+      if (hudMeta) hudMeta.textContent = info.meta;
+
+      setTimeout(() => {
+        if (newCity === 'all') {
+          currentPhotos = [...LOOKBOOK_PHOTOS];
+        } else {
+          currentPhotos = LOOKBOOK_PHOTOS.filter((p) => p.cityKey === newCity);
+        }
+
+        currentIndex = Math.min(targetIndex, currentPhotos.length - 1);
+        if (currentIndex < 0) currentIndex = 0;
+
+        renderStageCards();
+        buildDots();
+
+        // Animate stage entrance
+        stage.style.transition = 'opacity 0.3s ease, transform 0.3s ease';
+        stage.style.opacity = '1';
+        stage.style.transform = `translateZ(-${dims.radius * 0.75}px) scale(1)`;
+
+        updateCardTransforms();
+
+        setTimeout(() => {
+          isTransitioning = false;
+        }, 300);
+      }, 200);
+    }
+
+    function nextCard() {
+      if (isTransitioning) return;
+      playCyberSound('click');
+
+      if (currentIndex < currentPhotos.length - 1) {
+        currentIndex++;
+        updateCardTransforms();
+      } else {
+        // Reached end of current city! Move smoothly to next city in order
+        if (currentCity === 'all') {
+          currentIndex = 0;
+          updateCardTransforms();
+        } else {
+          playCyberSound('open');
+          const curIdx = CITY_ORDER.indexOf(currentCity);
+          const nextCity = CITY_ORDER[(curIdx + 1) % CITY_ORDER.length];
+          switchCity(nextCity, 0);
+        }
+      }
+    }
+
+    function prevCard() {
+      if (isTransitioning) return;
+      playCyberSound('click');
+
+      if (currentIndex > 0) {
+        currentIndex--;
+        updateCardTransforms();
+      } else {
+        // Reached start of current city! Move smoothly to previous city's last photo
+        if (currentCity === 'all') {
+          currentIndex = currentPhotos.length - 1;
+          updateCardTransforms();
+        } else {
+          playCyberSound('open');
+          const curIdx = CITY_ORDER.indexOf(currentCity);
+          const prevCity = CITY_ORDER[(curIdx - 1 + CITY_ORDER.length) % CITY_ORDER.length];
+          const prevPhotos = LOOKBOOK_PHOTOS.filter((p) => p.cityKey === prevCity);
+          switchCity(prevCity, Math.max(0, prevPhotos.length - 1));
+        }
+      }
+    }
+
+    // Lightbox modal logic
+    function openLightbox(photoIndex) {
+      if (!modal || photoIndex < 0 || photoIndex >= currentPhotos.length) return;
+      modalPhotoIndex = photoIndex;
+      const photo = currentPhotos[photoIndex];
+
       playCyberSound('open');
-      showImage(index);
+      modalImg.src = photo.src;
+      modalImg.alt = `${photo.title} - ${photo.city}, ${photo.state}`;
+      modalLoc.textContent = `${photo.city}, ${photo.state} · ${photo.date}`;
+      modalCap.textContent = `${photo.title} — ${photo.desc}`;
       modal.classList.add('open');
       document.body.style.overflow = 'hidden';
     }
 
-    function closeModal() {
+    function closeLightbox() {
+      if (!modal) return;
       playCyberSound('click');
       modal.classList.remove('open');
       document.body.style.overflow = '';
     }
 
-    galleryCards.forEach((card, idx) => {
-      card.addEventListener('click', () => openModal(idx));
-    });
+    function nextLightboxPhoto() {
+      modalPhotoIndex = (modalPhotoIndex + 1) % currentPhotos.length;
+      openLightbox(modalPhotoIndex);
+    }
 
-    if (closeBtn) closeBtn.addEventListener('click', closeModal);
+    function prevLightboxPhoto() {
+      modalPhotoIndex = (modalPhotoIndex - 1 + currentPhotos.length) % currentPhotos.length;
+      openLightbox(modalPhotoIndex);
+    }
+
+    if (modalClose) modalClose.addEventListener('click', closeLightbox);
     if (modal) {
       modal.addEventListener('click', (e) => {
-        if (e.target === modal) closeModal();
+        if (e.target === modal) closeLightbox();
       });
     }
-
-    if (prevBtn) {
-      prevBtn.addEventListener('click', (e) => {
+    if (lbModalPrev) {
+      lbModalPrev.addEventListener('click', (e) => {
         e.stopPropagation();
         playCyberSound('click');
-        let newIdx = state.currentGalleryIndex - 1;
-        if (newIdx < 0) newIdx = state.galleryItems.length - 1;
-        showImage(newIdx);
+        prevLightboxPhoto();
       });
     }
-
-    if (nextBtn) {
-      nextBtn.addEventListener('click', (e) => {
+    if (lbModalNext) {
+      lbModalNext.addEventListener('click', (e) => {
         e.stopPropagation();
         playCyberSound('click');
-        let newIdx = (state.currentGalleryIndex + 1) % state.galleryItems.length;
-        showImage(newIdx);
+        nextLightboxPhoto();
       });
     }
 
-    // Keyboard support (Escape, Arrow Left, Arrow Right)
     window.addEventListener('keydown', (e) => {
-      if (!modal.classList.contains('open')) return;
-      if (e.key === 'Escape') closeModal();
-      if (e.key === 'ArrowLeft' && prevBtn) prevBtn.click();
-      if (e.key === 'ArrowRight' && nextBtn) nextBtn.click();
+      if (!modal || !modal.classList.contains('open')) return;
+      if (e.key === 'Escape') closeLightbox();
+      if (e.key === 'ArrowLeft') prevLightboxPhoto();
+      if (e.key === 'ArrowRight') nextLightboxPhoto();
     });
 
-    // Gallery Category Filtering
-    filterBtns.forEach((btn) => {
-      btn.addEventListener('click', () => {
-        filterBtns.forEach((b) => b.classList.remove('active'));
-        btn.classList.add('active');
-        const filterVal = btn.dataset.galleryFilter;
-        playCyberSound('click');
+    // Arrow button listeners
+    if (prevBtn) prevBtn.addEventListener('click', prevCard);
+    if (nextBtn) nextBtn.addEventListener('click', nextCard);
 
-        galleryCards.forEach((card) => {
-          const cardCat = card.dataset.galleryCat;
-          if (filterVal === 'all' || cardCat === filterVal) {
-            card.style.display = 'block';
-          } else {
-            card.style.display = 'none';
-          }
-        });
+    // City tab listeners
+    cityTabs.forEach((tab) => {
+      tab.addEventListener('click', () => {
+        const city = tab.dataset.city;
+        if (city === currentCity) return;
+        playCyberSound('click');
+        switchCity(city, 0);
       });
     });
+
+    // Pipeline step listeners
+    pipelineSteps.forEach((step) => {
+      step.addEventListener('click', () => {
+        const city = step.dataset.pipelineCity;
+        if (city === currentCity) return;
+        playCyberSound('click');
+        switchCity(city, 0);
+      });
+    });
+
+    // Wheel listener with throttle
+    let lastWheelTime = 0;
+    viewport.addEventListener('wheel', (e) => {
+      const now = Date.now();
+      if (now - lastWheelTime < 320) {
+        e.preventDefault();
+        return;
+      }
+      const delta = Math.abs(e.deltaX) > Math.abs(e.deltaY) ? e.deltaX : e.deltaY;
+      if (Math.abs(delta) > 18) {
+        e.preventDefault();
+        lastWheelTime = now;
+        if (delta > 0) {
+          nextCard();
+        } else {
+          prevCard();
+        }
+      }
+    }, { passive: false });
+
+    // Touch swipe support
+    let touchStartX = 0;
+    let isTouchSwiping = false;
+    viewport.addEventListener('touchstart', (e) => {
+      if (e.touches.length === 1) {
+        touchStartX = e.touches[0].clientX;
+        isTouchSwiping = true;
+      }
+    }, { passive: true });
+
+    viewport.addEventListener('touchend', (e) => {
+      if (!isTouchSwiping) return;
+      isTouchSwiping = false;
+      const diffX = e.changedTouches[0].clientX - touchStartX;
+      if (diffX < -40) {
+        nextCard();
+      } else if (diffX > 40) {
+        prevCard();
+      }
+    }, { passive: true });
+
+    // Mouse drag support
+    let mouseStartX = 0;
+    let isMouseDown = false;
+    viewport.addEventListener('mousedown', (e) => {
+      if (e.target.closest('.cylinder-arrow-btn') || e.target.closest('.cyl-dot')) return;
+      mouseStartX = e.clientX;
+      isMouseDown = true;
+    });
+
+    window.addEventListener('mouseup', (e) => {
+      if (!isMouseDown) return;
+      isMouseDown = false;
+      const diffX = e.clientX - mouseStartX;
+      if (diffX < -45) {
+        nextCard();
+      } else if (diffX > 45) {
+        prevCard();
+      }
+    });
+
+    // Window resize handler
+    let resizeTimer = null;
+    window.addEventListener('resize', () => {
+      clearTimeout(resizeTimer);
+      resizeTimer = setTimeout(() => {
+        const dims = getCylinderDimensions();
+        stage.style.transform = `translateZ(-${dims.radius * 0.75}px)`;
+        updateCardTransforms();
+      }, 120);
+    });
+
+    // Initial setup
+    const initialDims = getCylinderDimensions();
+    stage.style.transform = `translateZ(-${initialDims.radius * 0.75}px)`;
+    renderStageCards();
+    buildDots();
+    updateCardTransforms();
+  }
+
+  function initCampusGallery() {
+    initLookbookCylinder();
   }
 
   /* ==========================================================================
@@ -1123,7 +1720,7 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
     initCyberTerminal();
     initWorkshopEstimator();
     initSkillsMatrix();
-    initCampusGallery();
+    initLookbookCylinder();
     initFAQ();
     initInquiryForm();
     initMobileMenu();
