@@ -6,9 +6,18 @@ Built with a clean **Clay White** design system, interactive 3D WebGL particle c
 
 ---
 
+## 🌐 Live Deployments & Endpoints
+
+- **Custom Domain (HTTPS via DuckDNS):** [https://jeevan-bagade-trainer.duckdns.org](https://jeevan-bagade-trainer.duckdns.org)
+- **AWS CloudFront (Global CDN + HTTPS):** [https://d3vhf0on1qafxv.cloudfront.net](https://d3vhf0on1qafxv.cloudfront.net)
+- **AWS S3 Website Endpoint:** [http://jeevan-bagade-trainer.s3-website.ap-south-2.amazonaws.com](http://jeevan-bagade-trainer.s3-website.ap-south-2.amazonaws.com)
+- **GitHub Repository:** [https://github.com/NSudeep-Rust/portfoliotrainer](https://github.com/NSudeep-Rust/portfoliotrainer)
+
+---
+
 ## 🚀 Key Features & Highlights
 
-1. **Clay White & Neumorphic Design System:**
+1. **Clay White Design System:**
    - Soft porcelain clay aesthetic (`#f1f5f9`) with pillowy pure-white cards (`#ffffff`).
    - Multi-layered soft drop shadows and subtle inner top-bevel highlights for a tactile feel.
    - High-contrast slate typography (`#0f172a` / `#334155`) for crisp legibility.
@@ -48,7 +57,8 @@ Built with a clean **Clay White** design system, interactive 3D WebGL particle c
 - **HTML5:** Semantic architecture, accessible landmarks, and SEO OpenGraph meta tags.
 - **CSS3:** Custom design tokens, Claymorphic shadows, responsive grid/flexbox, keyframe animations, 3D CSS transforms.
 - **Vanilla JavaScript:** 100% vanilla ES6+, zero build steps, self-contained Three.js local library.
-- **Local Assets:** High-resolution optimized imagery, vector SVG icons, and custom SVG favicon.
+- **AWS Infrastructure:** S3 Bucket (`ap-south-2`), CloudFront Distribution, automated cache invalidation.
+- **CI/CD:** Multi-stage GitHub Actions workflow deploying to both GitHub Pages and AWS S3/CloudFront on every push.
 
 ---
 
@@ -61,14 +71,3 @@ python3 -m http.server 8000
 ```
 
 Open [http://localhost:8000](http://localhost:8000) in your browser.
-
----
-
-## 🌐 GitHub Pages Deployment & CI/CD
-
-This repository is structured for zero-build deployment on **GitHub Pages**:
-
-1. Go to **Settings > Pages** in your GitHub repository.
-2. Under **Build and deployment > Source**, select **Deploy from a branch**.
-3. Choose branch `main` and folder `/ (root)`.
-4. Click **Save**. The website will be live at `https://<your-username>.github.io/portfoliotrainer/`.
