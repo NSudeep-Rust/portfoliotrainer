@@ -522,7 +522,7 @@ Specialty:     Cybersecurity & VAPT Trainer · Cloud & AI Security
 Academic:      MCA (MIT World Peace University, Pune)
                BCA (JSS SMI College, Dharwad)
 Experience:    3+ Years | 9+ Workshops Delivered Pan-India
-Base:          Mysore, Karnataka, India
+Base:          Hubballi, Karnataka, India
 Languages:     English (Prof), Hindi (Prof), Kannada (Native)`,
 
       skills: () => `
@@ -538,10 +538,9 @@ Languages:     English (Prof), Hindi (Prof), Kannada (Native)`,
 
       workshops: () => `
 [DELIVERED WORKSHOPS SUMMARY]
-• Hubballi, Karnataka       - Hands-On VAPT & Threat Defense Labs (11 Cohorts)
+• Hubballi, Karnataka       - Hands-On VAPT & Threat Defense Labs (15 Cohorts)
 • Gadag-Betageri, Karnataka - Python Security Automation & Applied AI (5 Cohorts)
 • Gangawati, Karnataka      - Applied AI & Computer Vision Keynotes (2 Cohorts)
-• Mysore, Karnataka         - Full-Cohort Keynotes & Ethical Hacking Drills (4 Cohorts)
 • Dharwad, Karnataka        - BCA Technical Foundations & Network Security Drills
 Total: Real photographic workshop documentation across Karnataka engineering cohorts.`,
 
@@ -562,7 +561,7 @@ Python 3 / Scapy | Docker Containers | Oracle VirtualBox / VMware`,
       quote: () => `
 [COMMERCIAL GUIDELINES]
 • Trainer fees: Negotiable daily / hourly rates based on duration & syllabus
-• On-site travel outside Mysore: Travel + accommodation + food as agreed
+• On-site travel outside Hubballi: Travel + accommodation + food as agreed
 • Payment milestones: 50% advance to block dates, 50% on completion
 Type 'contact' or visit the #estimator section to build a tailored proposal!`,
 
@@ -570,8 +569,8 @@ Type 'contact' or visit the #estimator section to build a tailored proposal!`,
 [DIRECT CONTACT CHANNELS]
 Email:         jeevndeepbagade@gmail.com
 WhatsApp/Tel:  +91 6361536991
-LinkedIn:      https://www.linkedin.com/in/jeevan-bagade
-Location:      Mysore, Karnataka, India · Available Pan-India`
+LinkedIn:      https://www.linkedin.com/in/jeevanrb?utm_source=share_via&utm_content=profile&utm_medium=member_android
+Location:      Hubballi, Karnataka, India · Available Pan-India`
     };
 
     function executeCommand(rawCmd) {
@@ -729,7 +728,7 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
 
       // Terms based on location
       if (location === 'local') {
-        terms = 'Commercial terms: <strong>Negotiable daily trainer fee</strong>. Local Mysore campus (No accommodation required)';
+        terms = 'Commercial terms: <strong>Negotiable daily trainer fee</strong>. Local Hubballi campus (No accommodation required)';
       } else if (location === 'state') {
         terms = 'Commercial terms: <strong>Negotiable daily rate</strong> + travel & accommodation within Karnataka as agreed';
       } else {
@@ -820,10 +819,10 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
   /* ==========================================================================
      10. 3D CYLINDRICAL LOOKBOOK ENGINE & GLASS LIGHTBOX MODAL
      Authentic Workshop Photographic Documentation from Real Karnataka Cohorts:
-     Hubballi, Gadag-Betageri, Gangawati & Mysore.
+     Hubballi, Gadag-Betageri & Gangawati.
      ========================================================================== */
   const LOOKBOOK_PHOTOS = [
-    // HUBBALLI (11 photos)
+    // HUBBALLI (15 photos)
     {
       id: "hubballi-01",
       cityKey: "hubballi",
@@ -934,6 +933,46 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
       desc: "Coordinating complex multi-stage vulnerability verification drills.",
       src: "assets/images/lookbook/hubballi-11.jpg"
     },
+    {
+      id: "hubballi-12",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Full-Cohort Keynote Session",
+      desc: "Lecture on triggers, node automation, and modern web infrastructure.",
+      src: "assets/images/lookbook/hubballi-12.jpg"
+    },
+    {
+      id: "hubballi-13",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Interactive Lab Mentorship",
+      desc: "Engaging computer lab cohort with practical hands-on problem solving.",
+      src: "assets/images/lookbook/hubballi-13.jpg"
+    },
+    {
+      id: "hubballi-14",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Auditorium Technology Keynote",
+      desc: "Addressing a full auditorium of engineering students on industry cybersecurity requirements.",
+      src: "assets/images/lookbook/hubballi-14.jpg"
+    },
+    {
+      id: "hubballi-15",
+      cityKey: "hubballi",
+      city: "Hubballi",
+      state: "Karnataka",
+      date: "Oct 2026",
+      title: "Ethical Hacking: Digital Investigation",
+      desc: "Comprehensive workshop on digital forensics, ethical hacking tradecraft, and threat investigation.",
+      src: "assets/images/lookbook/hubballi-15.jpg"
+    },
 
     // GADAG-BETAGERI (5 photos)
     {
@@ -1007,58 +1046,16 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
       title: "AI Technology Lecture",
       desc: "Interactive keynote addressing students on future AI and cybersecurity convergence.",
       src: "assets/images/lookbook/gangawati-02.jpg"
-    },
-
-    // MYSORE (4 photos)
-    {
-      id: "mysore-01",
-      cityKey: "mysore",
-      city: "Mysore",
-      state: "Karnataka",
-      date: "Oct 2026",
-      title: "Full-Cohort Keynote Session",
-      desc: "Lecture on triggers, node automation, and modern web infrastructure.",
-      src: "assets/images/lookbook/mysore-01.jpg"
-    },
-    {
-      id: "mysore-02",
-      cityKey: "mysore",
-      city: "Mysore",
-      state: "Karnataka",
-      date: "Oct 2026",
-      title: "Interactive Lab Mentorship",
-      desc: "Engaging computer lab cohort with practical hands-on problem solving.",
-      src: "assets/images/lookbook/mysore-02.jpg"
-    },
-    {
-      id: "mysore-03",
-      cityKey: "mysore",
-      city: "Mysore",
-      state: "Karnataka",
-      date: "Oct 2026",
-      title: "Auditorium Technology Keynote",
-      desc: "Addressing a full auditorium of engineering students on industry cybersecurity requirements.",
-      src: "assets/images/lookbook/mysore-03.jpg"
-    },
-    {
-      id: "mysore-04",
-      cityKey: "mysore",
-      city: "Mysore",
-      state: "Karnataka",
-      date: "Oct 2026",
-      title: "Ethical Hacking: Digital Investigation",
-      desc: "Comprehensive workshop on digital forensics, ethical hacking tradecraft, and threat investigation.",
-      src: "assets/images/lookbook/mysore-04.jpg"
     }
   ];
 
-  const CITY_ORDER = ['hubballi', 'gadag', 'gangawati', 'mysore'];
+  const CITY_ORDER = ['hubballi', 'gadag', 'gangawati'];
 
   const CITY_INFO = {
     'hubballi': {
       title: 'Hubballi, Karnataka',
-      meta: 'Sept & Oct 2026 · Hands-On VAPT & Threat Defense Labs',
-      count: 11
+      meta: 'Sept & Oct 2026 · Hands-On VAPT, Keynotes & Defense Labs',
+      count: 15
     },
     'gadag': {
       title: 'Gadag-Betageri, Karnataka',
@@ -1070,14 +1067,9 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
       meta: 'Oct 2026 · Applied AI & Computer Vision Keynotes',
       count: 2
     },
-    'mysore': {
-      title: 'Mysore, Karnataka',
-      meta: 'Oct 2026 · Full-Cohort Keynotes & Ethical Hacking Drills',
-      count: 4
-    },
     'all': {
       title: 'All Karnataka Cohorts',
-      meta: 'Hubballi · Gadag-Betageri · Gangawati · Mysore (22 Total Photos)',
+      meta: 'Hubballi · Gadag-Betageri · Gangawati (22 Total Photos)',
       count: 22
     }
   };
@@ -1703,7 +1695,7 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
   }
 
   /* ==========================================================================
-     14. LIVE MYSORE IST CLOCK & COPYRIGHT YEAR
+     14. LIVE HUBBALLI IST CLOCK & COPYRIGHT YEAR
      ========================================================================== */
   function initClock() {
     const clockEl = document.getElementById('ist-clock');
@@ -1724,7 +1716,7 @@ Location:      Mysore, Karnataka, India · Available Pan-India`
         hour12: true
       };
       const now = new Date().toLocaleTimeString('en-US', options);
-      clockEl.textContent = `Mysore, Karnataka · IST: ${now}`;
+      clockEl.textContent = `Hubballi, Karnataka · IST: ${now}`;
     }
     updateIST();
     setInterval(updateIST, 1000);

@@ -181,42 +181,42 @@
   },
   {
     "src": "IMG-20261024-WA0005.jpg.jpeg",
-    "id": "mysore-01",
-    "city": "Mysore",
+    "id": "hubballi-12",
+    "city": "Hubballi",
     "state": "Karnataka",
     "date": "Oct 2026",
     "title": "Full-Cohort Keynote Session",
     "desc": "Lecture on triggers, node automation, and modern web infrastructure.",
-    "web_path": "assets/images/lookbook/mysore-01.jpg"
+    "web_path": "assets/images/lookbook/hubballi-12.jpg"
   },
   {
     "src": "IMG-20261024-WA0012.jpg.jpeg",
-    "id": "mysore-02",
-    "city": "Mysore",
+    "id": "hubballi-13",
+    "city": "Hubballi",
     "state": "Karnataka",
     "date": "Oct 2026",
     "title": "Interactive Lab Mentorship",
     "desc": "Engaging computer lab cohort with practical hands-on problem solving.",
-    "web_path": "assets/images/lookbook/mysore-02.jpg"
+    "web_path": "assets/images/lookbook/hubballi-13.jpg"
   },
   {
     "src": "IMG-20261024-WA0013.jpg.jpeg",
-    "id": "mysore-03",
-    "city": "Mysore",
+    "id": "hubballi-14",
+    "city": "Hubballi",
     "state": "Karnataka",
     "date": "Oct 2026",
     "title": "Auditorium Technology Keynote",
     "desc": "Addressing a full auditorium of engineering students on industry cybersecurity requirements.",
-    "web_path": "assets/images/lookbook/mysore-03.jpg"
+    "web_path": "assets/images/lookbook/hubballi-14.jpg"
   },
   {
     "src": "IMG-20261024-WA0014.jpg.jpeg",
-    "id": "mysore-04",
-    "city": "Mysore",
+    "id": "hubballi-15",
+    "city": "Hubballi",
     "state": "Karnataka",
     "date": "Oct 2026",
     "title": "Ethical Hacking: Digital Investigation",
     "desc": "Comprehensive workshop on digital forensics, ethical hacking tradecraft, and threat investigation.",
-    "web_path": "assets/images/lookbook/mysore-04.jpg"
+    "web_path": "assets/images/lookbook/hubballi-15.jpg"
   }
 ]

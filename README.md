@@ -1,6 +1,6 @@
 # Jeevan Bagade — Certified Trainer Portfolio (`portfoliotrainer`)
 
-An ultra-modern, high-performance portfolio website for **Jeevan Bagade**, freelance **Certified Trainer** for Cybersecurity, VAPT, SOC & Technology based in Mysore, Karnataka, India.
+An ultra-modern, high-performance portfolio website for **Jeevan Bagade**, freelance **Certified Trainer** for Cybersecurity, VAPT, SOC & Technology based in Hubballi, Karnataka, India.
 
 Built with a clean **Clay White** design system, interactive 3D WebGL particle constellation, scroll-driven interactions, real-time command terminal, and instant workshop scope estimator.
 
@@ -43,7 +43,7 @@ Built with a clean **Clay White** design system, interactive 3D WebGL particle c
    - Instant real-time search filtering across tools and protocols.
 
 6. **On-Campus Photo Gallery & Lightbox:**
-   - Authentic workshop captures across Mysore, Bengaluru, Pune, Dharwad, Hubballi, and Hyderabad.
+   - Authentic workshop captures across Hubballi, Gadag-Betageri, Gangawati, Dharwad, and Pune.
    - Location filtering + full-screen lightbox with keyboard navigation (`Esc`, `ArrowLeft`, `ArrowRight`).
 
 7. **Audio Feedback & IST Clock:**
